@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marea Studio — Agencia de marketing digital</title>
+<title>Marae Blue Studio — Agencia de marketing digital</title>
 <meta name="description" content="Estrategia, contenido y campañas que se ven bien y rinden mejor.">
 <meta name="theme-color" content="#0a0a0b">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Marea Studio — Agencia de marketing digital">
+<meta property="og:title" content="Marae Blue Studio — Agencia de marketing digital">
+<meta property="og:site_name" content="Marae Blue Studio">
 <meta property="og:description" content="Estrategia, contenido y campañas que se ven bien y rinden mejor.">
 <meta property="og:image" content="assets/img/hero-city.jpg">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -16,9 +17,9 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/css/styles.css">
-<script src="assets/js/main.js" defer></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&family=Unbounded:wght@200&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261119-4">
+<script src="assets/js/main.js?v=20261119-4" defer></script>
 </head>
 <body>
 <div class="ms" id="top">
@@ -33,26 +34,39 @@
 
   <div class="wrap" style="width: 100%; position: relative; z-index: 3">
     <nav class="nav" aria-label="Principal">
-      <a class="logo" href="#inicio" aria-label="Marea Studio — inicio"><img src="assets/img/wordmark-dark.svg" alt="Marea Studio" style="display: block; height: 36px; width: auto"></a>
+      <a class="logo" href="#inicio" aria-label="Marae Blue Studio — inicio"><span class="wm" aria-hidden="true"><span class="wm-name">Marae blue</span><span class="wm-studio">Studio</span></span></a>
       <div class="navlinks">
         <a class="nl" href="#servicios">Servicios</a>
-        <a class="nl" href="#proyectos">Proyectos</a>
-        <a class="nl" href="#proceso">Proceso</a>
+        <a class="nl" href="#por-que">Por qué nosotros</a>
+        <a class="nl" href="#proceso">Cómo trabajamos</a>
+        <a class="nl" href="#faq">FAQ</a>
         <a class="btn btn-studio" href="#contacto">Hablemos
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
         </a>
       </div>
-      <button class="menubtn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobilemenu" data-menu-toggle>
-        <svg class="ic-close" hidden width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg>
-        <svg class="ic-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16"></path><path d="M4 16h16"></path></svg>
+      <button class="menubtn" type="button" aria-label="Abrir menú" aria-haspopup="dialog" aria-controls="mobilemenu" data-menu-open>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16"></path><path d="M4 16h16"></path></svg>
       </button>
     </nav>
-    <div class="mobilemenu" id="mobilemenu" hidden>
-        <a href="#servicios">Servicios</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#proceso">Proceso</a>
-        <a href="#contacto">Contacto</a>
+    <dialog class="mmenu on-dark" id="mobilemenu" aria-label="Menú">
+      <div class="mmenu-top">
+        <span class="wm" aria-hidden="true"><span class="wm-name">Marae blue</span><span class="wm-studio">Studio</span></span>
+        <button class="mmenu-close" type="button" aria-label="Cerrar menú" data-menu-close>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg>
+        </button>
       </div>
+      <nav class="mmenu-links" aria-label="Menú móvil">
+        <a href="#servicios"><span class="mmenu-n">01</span><span class="disp">Servicios</span></a>
+        <a href="#por-que"><span class="mmenu-n">02</span><span class="disp">Por qué nosotros</span></a>
+        <a href="#proceso"><span class="mmenu-n">03</span><span class="disp">Cómo trabajamos</span></a>
+        <a href="#faq"><span class="mmenu-n">04</span><span class="disp">Preguntas frecuentes</span></a>
+        <a href="#contacto"><span class="mmenu-n">05</span><span class="disp">Contacto</span></a>
+      </nav>
+      <a class="btn btn-studio mmenu-cta" href="#contacto">Solicitar reunión gratuita
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+      </a>
+      <p class="mmenu-foot">Primera reunión gratuita y sin compromiso.</p>
+    </dialog>
   </div>
 
   <div class="hero-body wrap" style="width: 100%">
@@ -65,10 +79,10 @@
     <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px; margin-top: 40px">
       <p class="fadeup d5" style="margin: 0; font-size: 19px; line-height: 1.6; color: #e8ebfc; max-width: 42ch">Estrategia, contenido y campañas que se ven bien y rinden mejor.</p>
       <div class="fadeup d6" style="display: flex; flex-wrap: wrap; gap: 12px">
-        <a class="btn btn-studio" href="#contacto">Empezar un proyecto
+        <a class="btn btn-studio" href="#contacto">Solicitar reunión gratuita
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
         </a>
-        <a class="btn btn-ghost" href="#proyectos">Ver proyectos</a>
+        <a class="btn btn-ghost" href="#proceso">Cómo trabajamos</a>
       </div>
     </div>
     <div class="fadeup d6" style="display: flex; align-items: center; gap: 16px; margin-top: 56px">
@@ -79,15 +93,60 @@
 </header>
 
 <main>
-<!-- SERVICIOS -->
+<!-- 01 PROBLEMAS -->
+<section class="sec alt" id="problemas">
+  <div class="wrap">
+    <div class="sechead">
+      <div style="display: flex; flex-direction: column; gap: 20px">
+        <span class="label kw rvt">01 — ¿Te suena?</span>
+        <h2 class="h-sec disp"><span class="line rvl"><span>¿Te suena alguna?</span></span></h2>
+      </div>
+      <p class="lead rv dl2">Son las frases que más escuchamos cuando un negocio nos llama. Si te reconoces en una, podemos ayudarte.</p>
+    </div>
+    <div class="pains">
+      <article class="pain rv dl0">
+        <span class="pain-q disp" aria-hidden="true">“</span>
+        <h3 class="disp">Publico en redes, pero no vende.</h3>
+        <p>Mucho esfuerzo y pocos clientes. El contenido no está conectado con un objetivo.</p>
+      </article>
+      <article class="pain rv dl1">
+        <span class="pain-q disp" aria-hidden="true">“</span>
+        <h3 class="disp">Invierto en anuncios y no sé qué funciona.</h3>
+        <p>Cada mes sale dinero, pero no sabes cuánto vuelve ni de dónde.</p>
+      </article>
+      <article class="pain rv dl2">
+        <span class="pain-q disp" aria-hidden="true">“</span>
+        <h3 class="disp">No tengo tiempo para el marketing.</h3>
+        <p>Llevas el negocio y el marketing siempre se queda para mañana.</p>
+      </article>
+      <article class="pain rv dl0">
+        <span class="pain-q disp" aria-hidden="true">“</span>
+        <h3 class="disp">Mi marca no transmite lo que hago.</h3>
+        <p>Lo que ofreces es bueno, pero no se nota en cómo te presentas.</p>
+      </article>
+      <article class="pain rv dl1">
+        <span class="pain-q disp" aria-hidden="true">“</span>
+        <h3 class="disp">Mi agencia no me cuenta nada.</h3>
+        <p>Informes que no se entienden, respuestas que tardan días y la sensación de no saber qué se hace.</p>
+      </article>
+      <article class="pain rv dl2">
+        <span class="pain-q disp" aria-hidden="true">“</span>
+        <h3 class="disp">El negocio se ha estancado.</h3>
+        <p>Lo que antes funcionaba ya no basta para seguir creciendo.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 02 SOLUCIÓN (servicios) -->
 <section class="sec" id="servicios">
   <div class="wrap">
     <div class="sechead">
       <div style="display: flex; flex-direction: column; gap: 20px">
-        <span class="label kw rvt">01 — Servicios</span>
-        <h2 class="h-sec disp"><span class="line rvl"><span>Lo que hacemos</span></span></h2>
+        <span class="label kw rvt">02 — La solución</span>
+        <h2 class="h-sec disp"><span class="line rvl"><span>Un plan para cada problema</span></span></h2>
       </div>
-      <p class="lead rv dl2">Cuatro disciplinas, un mismo equipo. Elige una para ver cómo trabajamos.</p>
+      <p class="lead rv dl2">Ordenamos tu marketing en cuatro frentes y activamos solo los que tu negocio necesita.</p>
     </div>
     <div class="rv dl2">
       <div class="svc open">
@@ -100,7 +159,10 @@
           </button>
           <div class="svc-body" id="svc-1">
             <span class="svc-spacer"></span>
-            <p>Definimos quién eres, a quién hablas y cómo lo dices. Posicionamiento, identidad verbal y visual, y un plan para llevarlo a cada canal.</p>
+            <div class="svc-text">
+              <p>Definimos quién eres, a quién hablas y cómo lo dices. Posicionamiento, identidad verbal y visual, y un plan para llevarlo a cada canal.</p>
+              <p class="svc-fix">Para cuando: «Mi marca no transmite lo que hago» o «El negocio se ha estancado».</p>
+            </div>
             <div class="chips"><span class="chip">Posicionamiento</span><span class="chip">Identidad</span><span class="chip">Naming</span></div>
           </div>
         </div>
@@ -114,35 +176,44 @@
           </button>
           <div class="svc-body" id="svc-2" hidden>
             <span class="svc-spacer"></span>
-            <p>Ideas que la gente quiere ver. Producción de foto, vídeo y piezas sociales con un calendario claro y una voz reconocible.</p>
+            <div class="svc-text">
+              <p>Ideas que la gente quiere ver y que llevan a una venta. Foto, vídeo y piezas para redes con un calendario claro, y nos encargamos de publicarlas.</p>
+              <p class="svc-fix">Para cuando: «Publico en redes, pero no vende» o «No tengo tiempo para el marketing».</p>
+            </div>
             <div class="chips"><span class="chip">Social media</span><span class="chip">Vídeo</span><span class="chip">Calendario editorial</span></div>
           </div>
         </div>
         <div class="svc">
           <button class="svc-btn" type="button" aria-expanded="false" aria-controls="svc-3">
             <span class="svc-num">03</span>
-            <span class="svc-title disp">Paid media</span>
+            <span class="svc-title disp">Publicidad online</span>
             <span class="svc-icon" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
             </span>
           </button>
           <div class="svc-body" id="svc-3" hidden>
             <span class="svc-spacer"></span>
-            <p>Campañas en Meta, Google y TikTok con objetivos medibles. Creatividad y datos en el mismo equipo, optimizando cada semana.</p>
+            <div class="svc-text">
+              <p>Campañas en Meta, Google y TikTok con objetivos medibles. Sabes cuánto inviertes, qué te devuelve y qué cambiamos cada semana.</p>
+              <p class="svc-fix">Para cuando: «Invierto en anuncios y no sé qué funciona».</p>
+            </div>
             <div class="chips"><span class="chip">Meta Ads</span><span class="chip">Google Ads</span><span class="chip">TikTok Ads</span></div>
           </div>
         </div>
         <div class="svc">
           <button class="svc-btn" type="button" aria-expanded="false" aria-controls="svc-4">
             <span class="svc-num">04</span>
-            <span class="svc-title disp">Web y producto digital</span>
+            <span class="svc-title disp">Web y analítica</span>
             <span class="svc-icon" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
             </span>
           </button>
           <div class="svc-body" id="svc-4" hidden>
             <span class="svc-spacer"></span>
-            <p>Webs rápidas, claras y fáciles de actualizar. Diseño, desarrollo y analítica para que cada visita cuente.</p>
+            <div class="svc-text">
+              <p>Webs rápidas, claras y fáciles de actualizar, preparadas para convertir visitas en contactos. Y la analítica necesaria para saber qué pasa en cada paso.</p>
+              <p class="svc-fix">Para cuando: tu web no trae clientes o no sabes de dónde vienen.</p>
+            </div>
             <div class="chips"><span class="chip">Diseño web</span><span class="chip">Desarrollo</span><span class="chip">Analítica</span></div>
           </div>
         </div>
@@ -150,12 +221,129 @@
   </div>
 </section>
 
-<!-- PROYECTOS -->
-<section class="sec" id="proyectos" style="background: #f4f5f7">
+<!-- 03 A TU MEDIDA -->
+<section class="sec deep on-dark" id="a-medida">
+  <div class="wrap">
+    <span class="label rvt" style="display: block; color: #c8d0f9; margin-bottom: 40px">03 — A tu medida</span>
+    <p class="manif disp rvw"><span class="w" style="transition-delay: 0ms">No</span> <span class="w" style="transition-delay: 70ms">hay</span> <span class="w" style="transition-delay: 140ms">dos</span> <span class="w" style="transition-delay: 210ms">negocios</span> <span class="w" style="transition-delay: 280ms">iguales.</span> <em><span class="w" style="transition-delay: 350ms">Tampoco</span> <span class="w" style="transition-delay: 420ms">dos</span> <span class="w" style="transition-delay: 490ms">planes.</span></em></p>
+    <div class="stats">
+      <div class="rv dl1">
+        <div class="pillar-t disp">Primero, escuchar</div>
+        <div class="stat-l">Antes de proponer nada, entendemos tu negocio, tus clientes y tus números.</div>
+      </div>
+      <div class="rv dl2">
+        <div class="pillar-t disp">Después, un plan solo tuyo</div>
+        <div class="stat-l">Sin paquetes cerrados. Elegimos canales, presupuesto y ritmo según el momento de tu negocio.</div>
+      </div>
+      <div class="rv dl3">
+        <div class="pillar-t disp">Y lo ajustamos contigo</div>
+        <div class="stat-l">Si tu negocio cambia, el plan también. Revisamos resultados juntos y decidimos el siguiente paso.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 POR QUÉ NOSOTROS -->
+<section class="sec" id="por-que">
   <div class="wrap">
     <div class="sechead">
       <div style="display: flex; flex-direction: column; gap: 20px">
-        <span class="label kw rvt">02 — Proyectos</span>
+        <span class="label kw rvt">04 — Por qué nosotros</span>
+        <h2 class="h-sec disp"><span class="line rvl"><span>Por qué Marae Blue</span></span></h2>
+      </div>
+      <p class="lead rv dl2">Lo que nos piden los negocios con los que trabajamos, y lo que nos exigimos a nosotros mismos.</p>
+    </div>
+    <div class="whys">
+      <div class="why rv dl0">
+        <span class="why-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg></span>
+        <h3 class="disp">Atención cercana y profesional</h3>
+        <p>Hablas siempre con las mismas personas, que conocen tu negocio y te responden rápido.</p>
+      </div>
+      <div class="why rv dl1">
+        <span class="why-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg></span>
+        <h3 class="disp">Transparencia en todo momento</h3>
+        <p>Sabes en qué se invierte cada euro, qué estamos haciendo y qué resultados da.</p>
+      </div>
+      <div class="why rv dl2">
+        <span class="why-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11"></path><path d="M9 12h11"></path><path d="M9 18h11"></path><path d="M4 6l1 1 2-2"></path><path d="M4 12l1 1 2-2"></path><path d="M4 18l1 1 2-2"></path></svg></span>
+        <h3 class="disp">Procesos claros desde el principio</h3>
+        <p>Desde el primer día sabes qué se hace en cada fase, quién lo hace y cuándo lo tienes.</p>
+      </div>
+      <div class="why rv dl0">
+        <span class="why-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
+        <h3 class="disp">Tu tiempo y tu dinero, bien invertidos</h3>
+        <p>Priorizamos lo que mueve resultados y dejamos fuera lo que no aporta.</p>
+      </div>
+      <div class="why rv dl1">
+        <span class="why-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1"></circle></svg></span>
+        <h3 class="disp">Constantes hasta llegar al objetivo</h3>
+        <p>No nos quedamos en el lanzamiento. Probamos, medimos y ajustamos hasta conseguirlo.</p>
+      </div>
+      <div class="why rv dl2">
+        <span class="why-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"></path><path d="M5 16l5-5 4 3 6-7"></path><path d="M15 7h5v5"></path></svg></span>
+        <h3 class="disp">Crecimiento guiado por datos</h3>
+        <p>Las decisiones se toman con números, no con intuiciones.</p>
+      </div>
+    </div>
+
+    <!-- Llamada a la acción intermedia -->
+    <div class="ctaband on-dark rv">
+      <div>
+        <h3 class="disp">¿Hablamos de tu negocio?</h3>
+        <p>La primera reunión es gratuita y sin compromiso.</p>
+      </div>
+      <a class="btn btn-studio" href="#contacto">Solicitar reunión gratuita
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 05 CÓMO TRABAJAMOS -->
+<section class="sec alt" id="proceso">
+  <div class="wrap">
+    <div class="sechead">
+      <div style="display: flex; flex-direction: column; gap: 20px">
+        <span class="label kw rvt">05 — Cómo trabajamos</span>
+        <h2 class="h-sec disp"><span class="line rvl"><span>Claro desde el primer día</span></span></h2>
+      </div>
+      <p class="lead rv dl2">Cuatro pasos, sin rodeos. Sabes en qué punto estamos en cada momento.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv dl0">
+        <span class="step-n disp">01</span>
+        <h3 class="disp">Reunión gratuita</h3>
+        <p>Nos cuentas tu negocio y lo que quieres conseguir. Vemos si encajamos, sin compromiso.</p>
+        <span class="bar" aria-hidden="true"></span>
+      </div>
+      <div class="step rv dl1">
+        <span class="step-n disp">02</span>
+        <h3 class="disp">Diagnóstico y plan</h3>
+        <p>Analizamos tu situación y te proponemos un plan a medida, con objetivos y presupuesto claros.</p>
+        <span class="bar" aria-hidden="true"></span>
+      </div>
+      <div class="step rv dl2">
+        <span class="step-n disp">03</span>
+        <h3 class="disp">Puesta en marcha</h3>
+        <p>Creamos y lanzamos lo que hayamos acordado: marca, contenido, campañas o web.</p>
+        <span class="bar" aria-hidden="true"></span>
+      </div>
+      <div class="step rv dl3">
+        <span class="step-n disp">04</span>
+        <h3 class="disp">Medir y mejorar</h3>
+        <p>Te enseñamos los resultados, aprendemos de los datos y optimizamos sin parar.</p>
+        <span class="bar" aria-hidden="true"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS: oculta hasta tener casos reales (quitar "hidden" para mostrarla) -->
+<section class="sec alt" id="proyectos" hidden>
+  <div class="wrap">
+    <div class="sechead">
+      <div style="display: flex; flex-direction: column; gap: 20px">
+        <span class="label kw rvt">Proyectos</span>
         <h2 class="h-sec disp"><span class="line rvl"><span>Trabajo reciente</span></span></h2>
       </div>
       <div class="filters rv dl2" role="group" aria-label="Filtrar proyectos">
@@ -222,76 +410,61 @@
   </div>
 </section>
 
-<!-- MANIFIESTO -->
-<section class="sec deep on-dark">
-  <div class="wrap">
-    <span class="label rvt" style="display: block; color: #c8d0f9; margin-bottom: 40px">03 — Cómo pensamos</span>
-    <p class="manif disp rvw"><span class="w" style="transition-delay: 0ms">Una</span> <span class="w" style="transition-delay: 70ms">idea</span> <span class="w" style="transition-delay: 140ms">clara,</span> <span class="w" style="transition-delay: 210ms">bien</span> <span class="w" style="transition-delay: 280ms">contada</span> <span class="w" style="transition-delay: 350ms">y</span> <span class="w" style="transition-delay: 420ms">medida.</span> <em><span class="w" style="transition-delay: 490ms">Eso</span> <span class="w" style="transition-delay: 560ms">es</span> <span class="w" style="transition-delay: 630ms">todo.</span></em> <span class="w" style="transition-delay: 700ms">Y</span> <span class="w" style="transition-delay: 770ms">no</span> <span class="w" style="transition-delay: 840ms">es</span> <span class="w" style="transition-delay: 910ms">poco.</span></p>
-    <div class="stats">
-      <div class="rv dl1">
-        <div class="stat-n disp">[+00%]</div>
-        <div class="stat-l">[Resultado de cliente: p. ej. crecimiento de ventas online]</div>
-      </div>
-      <div class="rv dl2">
-        <div class="stat-n disp">[00]</div>
-        <div class="stat-l">[Marcas acompañadas desde el inicio]</div>
-      </div>
-      <div class="rv dl3">
-        <div class="stat-n disp">[0,0x]</div>
-        <div class="stat-l">[Retorno medio de la inversión publicitaria]</div>
-      </div>
+<!-- 06 PREGUNTAS FRECUENTES -->
+<section class="sec" id="faq">
+  <div class="wrap faqwrap">
+    <div class="faqhead">
+      <span class="label kw rvt">06 — Preguntas frecuentes</span>
+      <h2 class="h-sec disp"><span class="line rvl"><span>Lo que nos suelen preguntar</span></span></h2>
+      <p class="lead rv dl2">¿No está tu duda? <a href="#contacto">Escríbenos</a> y te respondemos.</p>
+    </div>
+    <div class="faqs rv dl2">
+      <details class="faq" open>
+        <summary class="disp">¿Cuánto cuesta trabajar con vosotros?</summary>
+        <p>Depende de lo que necesite tu negocio. No trabajamos con paquetes cerrados: después de la primera reunión te enviamos una propuesta con el presupuesto detallado.</p>
+      </details>
+      <details class="faq">
+        <summary class="disp">¿La primera reunión tiene algún coste?</summary>
+        <p>No. Es gratuita y sin compromiso. Nos sirve para conocer tu negocio y ver si podemos ayudarte.</p>
+      </details>
+      <details class="faq">
+        <summary class="disp">¿Hay permanencia?</summary>
+        <p>[Pendiente: indicar si hay permanencia mínima y cómo se cancela el servicio.]</p>
+      </details>
+      <details class="faq">
+        <summary class="disp">¿Cuándo empezaré a ver resultados?</summary>
+        <p>Depende del canal. La publicidad online da datos en pocas semanas; la marca y el contenido necesitan más tiempo. Desde el principio te decimos qué esperar y cuándo.</p>
+      </details>
+      <details class="faq">
+        <summary class="disp">¿Qué tengo que aportar yo?</summary>
+        <p>Lo que sabes de tu negocio y algo de tiempo al principio para que lo entendamos bien. Del resto nos encargamos nosotros.</p>
+      </details>
+      <details class="faq">
+        <summary class="disp">¿Trabajáis con negocios pequeños?</summary>
+        <p>Sí. Adaptamos el plan al tamaño, al momento y al presupuesto de cada negocio.</p>
+      </details>
+      <details class="faq">
+        <summary class="disp">¿Cómo sabré qué se hace con mi inversión?</summary>
+        <p>Te enseñamos los resultados de forma periódica y te explicamos qué se ha hecho, qué ha funcionado y qué cambiamos a continuación.</p>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- PROCESO -->
-<section class="sec" id="proceso">
-  <div class="wrap">
-    <div class="sechead">
-      <div style="display: flex; flex-direction: column; gap: 20px">
-        <span class="label kw rvt">04 — Proceso</span>
-        <h2 class="h-sec disp"><span class="line rvl"><span>De la idea al dato</span></span></h2>
-      </div>
-      <p class="lead rv dl2">Cuatro pasos, sin rodeos. Sabes en qué punto estamos en cada momento.</p>
-    </div>
-    <div class="steps">
-      <div class="step rv dl0">
-        <span class="step-n disp">01</span>
-        <h3 class="disp">Escuchar</h3>
-        <p>Entendemos tu negocio, tu público y lo que ya funciona.</p>
-        <span class="bar" aria-hidden="true"></span>
-      </div>
-      <div class="step rv dl1">
-        <span class="step-n disp">02</span>
-        <h3 class="disp">Definir</h3>
-        <p>Una estrategia con objetivos medibles y un plan de canales.</p>
-        <span class="bar" aria-hidden="true"></span>
-      </div>
-      <div class="step rv dl2">
-        <span class="step-n disp">03</span>
-        <h3 class="disp">Crear</h3>
-        <p>Marca, contenido y piezas pensadas para cada pantalla.</p>
-        <span class="bar" aria-hidden="true"></span>
-      </div>
-      <div class="step rv dl3">
-        <span class="step-n disp">04</span>
-        <h3 class="disp">Medir</h3>
-        <p>Lanzamos, aprendemos de los datos y optimizamos.</p>
-        <span class="bar" aria-hidden="true"></span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACTO -->
+<!-- 07 CONTACTO -->
 <section class="sec" id="contacto" style="padding-top: 0">
   <div class="wrap">
     <div class="contact">
       <div style="display: flex; flex-direction: column; gap: 24px">
-        <span class="label kw rvt">05 — Contacto</span>
-        <h2 class="h-sec disp"><span class="line rvl"><span>¿Movemos tu marca?</span></span></h2>
-        <p class="lead rv dl2">Cuéntanos qué necesitas. Respondemos en [00] horas laborables.</p>
-        <div class="rv dl3" style="display: flex; flex-direction: column; gap: 8px; margin-top: 16px">
+        <span class="label kw rvt">07 — Contacto</span>
+        <h2 class="h-sec disp"><span class="line rvl"><span>Hablemos de tu negocio</span></span></h2>
+        <p class="lead rv dl2">Pide tu primera reunión gratuita o cuéntanos qué necesitas. Respondemos en [00] horas laborables.</p>
+        <ul class="ticks rv dl3">
+          <li>Primera reunión gratuita y sin compromiso</li>
+          <li>Propuesta a medida, sin paquetes cerrados</li>
+          <li>Presupuesto detallado antes de empezar</li>
+        </ul>
+        <div class="rv dl3" style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px">
           <a href="mailto:[email]" style="font-size: 19px; font-weight: 500">[hola@tudominio.com]</a>
           <span style="font-size: 16px; color: #5c6170">[Ciudad · Dirección]</span>
         </div>
@@ -299,30 +472,51 @@
       <form class="form rv dl2" id="contact-form" novalidate>
         <div class="form-fields">
           <div class="hp" aria-hidden="true"><label for="f-web">Web</label><input id="f-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <fieldset class="field full opts">
+            <legend>¿Qué quieres hacer?</legend>
+            <div class="optrow">
+              <label class="opt"><input type="radio" name="request" value="Reunión gratuita" checked><span>Reunión gratuita</span></label>
+              <label class="opt"><input type="radio" name="request" value="Presupuesto"><span>Pedir presupuesto</span></label>
+              <label class="opt"><input type="radio" name="request" value="Otra consulta"><span>Otra consulta</span></label>
+            </div>
+          </fieldset>
           <div class="field">
             <label for="f-name">Nombre</label>
             <input id="f-name" name="name" type="text" autocomplete="name" required>
           </div>
           <div class="field">
+            <label for="f-company">Negocio</label>
+            <input id="f-company" name="company" type="text" autocomplete="organization">
+          </div>
+          <div class="field">
             <label for="f-mail">Email</label>
             <input id="f-mail" name="email" type="email" autocomplete="email" required>
           </div>
+          <div class="field">
+            <label for="f-phone">Teléfono <span class="opt-l">(opcional)</span></label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+          </div>
           <div class="field full">
-            <label for="f-svc">¿Qué necesitas?</label>
+            <label for="f-svc">¿En qué te podemos ayudar?</label>
             <select id="f-svc" name="service">
+              <option>Aún no lo sé</option>
               <option>Estrategia de marca</option>
               <option>Contenido y redes</option>
-              <option>Paid media</option>
-              <option>Web y producto digital</option>
-              <option>Aún no lo sé</option>
+              <option>Publicidad online</option>
+              <option>Web y analítica</option>
+              <option>Varias cosas</option>
             </select>
           </div>
           <div class="field full">
             <label for="f-msg">Cuéntanos un poco más</label>
-            <textarea id="f-msg" name="message"></textarea>
+            <textarea id="f-msg" name="message" placeholder="Tu negocio, qué quieres conseguir y, si quieres, qué días te vienen mejor para la reunión."></textarea>
           </div>
+          <label class="field full consent">
+            <input type="checkbox" name="privacy" value="aceptada" required>
+            <span>He leído y acepto la <a href="#contacto">[política de privacidad]</a>.</span>
+          </label>
           <div class="field full" style="flex-direction: row; justify-content: flex-end">
-            <button class="btn btn-ink" type="submit" data-submit>Enviar
+            <button class="btn btn-ink" type="submit" data-submit>Enviar solicitud
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
             </button>
           </div>
@@ -331,6 +525,7 @@
           <div class="thanks" role="status" hidden>
             <span style="width: 14px; height: 14px; border-radius: 999px; background: #ff5a1f"></span>
             <h3 class="disp" style="margin: 0; font-size: 28px; line-height: 1.2; font-weight: 500">Gracias. Te escribimos pronto.</h3>
+            <p style="margin: 0; color: #5c6170">Si has pedido una reunión, te propondremos día y hora por email.</p>
             <button class="btn btn-ink" type="button" data-form-reset>Enviar otro mensaje</button>
           </div>
       </form>
@@ -345,8 +540,9 @@
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px">
       <nav class="rv" aria-label="Pie" style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 15px; font-weight: 500">
         <a href="#servicios">Servicios</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#proceso">Proceso</a>
+        <a href="#por-que">Por qué nosotros</a>
+        <a href="#proceso">Cómo trabajamos</a>
+        <a href="#faq">Preguntas frecuentes</a>
         <a href="#contacto">Contacto</a>
       </nav>
       <div class="rv dl1" style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 15px; font-weight: 500">
@@ -355,14 +551,20 @@
         <a href="#inicio">[Behance]</a>
       </div>
     </div>
-    <img class="rv" src="assets/img/logo-dark.svg" alt="Marea Studio — Marketing Agency" style="display: block; width: 100%; max-width: 560px; height: auto">
+    <p class="wm wm-lg rv" role="img" aria-label="Marae Blue Studio — Marketing Agency"><span class="wm-name">Marae blue</span><span class="wm-studio">Studio</span><span class="wm-tag">Marketing Agency</span></p>
     <div class="rv dl2" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 13px; color: #9aa0ad; border-top: 1px solid #26282d; padding-top: 24px">
-      <span>© 2026 Marea Studio</span>
+      <span>© 2026 Marae Blue Studio</span>
       <span>[Aviso legal · Privacidad · Cookies]</span>
     </div>
   </div>
 </footer>
 
+</div>
+
+<!-- Sello de marca fijo (decorativo) -->
+<div class="seal" aria-hidden="true">
+  <img class="seal-dark" src="assets/img/sello-dark.png" alt="" width="480" height="480">
+  <img class="seal-light" src="assets/img/sello-light.png" alt="" width="480" height="480">
 </div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 {
-  "name": "Marea Studio",
+  "name": "Marae Blue Studio",
   "version": 2,
   "color": {
     "themes": [
@@ -17,7 +17,7 @@
       {"name": "line", "value": {"light": "#e3e5ea", "dark": "#26282d"}, "usage": "Separadores y bordes de tarjetas, decorativos (no requieren contraste)."},
       {"name": "line-strong", "value": {"light": "#8a909c", "dark": "#5e6471"}, "usage": "Bordes de inputs y controles (≥3:1 sobre surface)."},
       {"name": "blue-950", "value": "#070d2c", "usage": "Azul casi negro, derivado de blue-500: fondos de vídeo y sombras de color. Constante en ambos temas."},
-      {"name": "blue-800", "value": "#14205d", "usage": "Azul marea profundo, derivado de blue-500: bloques de marca y fondos de sección. Texto encima: blanco (15:1) o blue-200."},
+      {"name": "blue-800", "value": "#14205d", "usage": "Azul profundo, derivado de blue-500: bloques de marca y fondos de sección. Texto encima: blanco (15:1) o blue-200."},
       {"name": "blue-700", "value": "#1b2c7e", "usage": "Azul intenso, derivado de blue-500: hover/pulsado de elementos en blue-500 y fondos de marca en tema oscuro. Texto encima: blanco (12.3:1)."},
       {"name": "blue-500", "value": "#1f3ccb", "usage": "AZUL BASE DE LA MARCA. Enlaces y acciones secundarias sobre fondo claro (8.2:1 sobre blanco), bloques de color, ilustración y datos. El resto de azules se derivan de este."},
       {"name": "blue-400", "value": "#687ff3", "usage": "Azul claro, derivado de blue-500: enlaces y acentos azules en tema oscuro (5.6:1 sobre negro), gráficos."},
@@ -42,7 +42,7 @@
         "name": "Titulares",
         "family": "display",
         "styles": [
-          {"name": "display-xl", "fontSize": "96px", "lineHeight": 0.95, "fontWeight": 500, "letterSpacing": "-0.02em", "sample": "Marea Studio", "usage": "Hero de portada, una sola frase corta. Agrandir Wide es muy ancha: 40px en móvil."},
+          {"name": "display-xl", "fontSize": "96px", "lineHeight": 0.95, "fontWeight": 500, "letterSpacing": "-0.02em", "sample": "Marae Blue Studio", "usage": "Hero de portada, una sola frase corta. Agrandir Wide es muy ancha: 40px en móvil."},
           {"name": "display", "fontSize": "60px", "lineHeight": 1, "fontWeight": 500, "letterSpacing": "-0.015em", "sample": "Marcas que se mueven", "usage": "Apertura de sección. 32px en móvil."},
           {"name": "h1", "fontSize": "40px", "lineHeight": 1.1, "fontWeight": 500, "letterSpacing": "-0.01em", "sample": "Estrategia y contenido", "usage": "Título de página interior."},
           {"name": "h2", "fontSize": "28px", "lineHeight": 1.2, "fontWeight": 500, "letterSpacing": "-0.005em", "sample": "Lo que hacemos", "usage": "Título de bloque."},
