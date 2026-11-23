@@ -5,9 +5,9 @@ Web de Marae Blue Studio (antes Marea Studio), agencia de marketing digital. Sit
 ## Estructura
 
 ```
-index.html              Página única (diseño v2, 2026-11-22): hero · 01 servicios (#servicios, con #s-web, #s-ads, #s-seo, #s-social, #s-estrategia, #s-email) · 02 por qué Marae (#porque: carrusel + bento) · foto mesa · 03 cómo trabajamos (#nosotros / #metodo) · 04 FAQ en chat (#faq) · 05 contacto (#contacto) · pie (#pie)
-assets/css/styles.css   Estilos del diseño v2 + añadidos al final (privacidad del formulario, cursor propio)
-assets/js/main.js       Menú (desplegable de servicios y menú móvil), carrusel, FAQ en chat, formulario → n8n con postal en directo, animaciones de scroll, parallax del hero y del pie, gráfica de "Resultados", red de "Cómo trabajamos" en móvil, cursor propio, desplazamiento suave
+index.html              Página única (diseño v2, actualizado 2026-11-23): hero · 01 servicios (#servicios, con #s-web, #s-ads, #s-seo, #s-social, #s-estrategia, #s-email) · 02 por qué Marae (#porque: texto, equipo pequeño, carrusel "Nos diferencia" y bento) · foto mesa · 03 cómo trabajamos (#nosotros / #metodo, con globo y "Para todo tipo de negocio") · 04 FAQ en chat (#faq) · 05 contacto (#contacto: presupuesto sin compromiso, formulario y postal con sello de lacre) · pie (#pie)
+assets/css/styles.css   Estilos del diseño v2 + añadidos al final (privacidad del formulario, cursor propio y "Ajustes responsive")
+assets/js/main.js       Modo claro/oscuro (se guarda en localStorage `marae-mode`), música generada con Web Audio (solo al pulsar), menú (desplegable de servicios y menú móvil), frases que se encienden palabra a palabra (`data-lw`), carrusel, FAQ en chat, formulario → n8n con postal en directo, animaciones de scroll, parallax del hero y del pie, gráfica de "Resultados", red de "Cómo trabajamos" en móvil, cursor propio, desplazamiento suave
 assets/img/             Fotos del diseño (hero-mar, svc-*, mesa-equipo…), logotipo (logo-marae-blue.svg), sello (sello.svg) y olas/islas en SVG
 favicon.*, apple-touch-icon.png, site.webmanifest   Iconos
 design-tokens.json      Sistema de diseño "Marae Blue Studio" (colores, tipografía, espaciado, radios)
@@ -23,6 +23,10 @@ La web sigue el diseño "Web Marea Studio · con fotos" hecho en Claude (artefac
 - Logotipo en imagen (`assets/img/logo-marae-blue.svg`). Sello solo en el pie (`.ft-sello`); ya no hay sello fijo en la esquina.
 - Al pasar un cambio del diseño a la web: el HTML del tablero va casi tal cual al `<body>`; lo dinámico (`sc-if`, `sc-for`, `{{…}}`) se hace en `main.js`.
 - Añadido fuera del diseño: casilla de privacidad y campo trampa en el formulario, cursor propio y desplazamiento suave.
+- Desplazamiento de los enlaces internos (`initSmoothLinks`): curva easeInOutSine, entre 1,1 y 3,4 s según la distancia. Al cargar la página, las fotos se preparan en segundo plano para que el desplazamiento no se congele la primera vez.
+- La frase "Estar presentes es el primer paso…" (`.svx-win-lead`) no lleva parallax: solo se encienden las palabras.
+- Ajustes responsive propios (bloque "Ajustes responsive" al final de `styles.css`): por debajo de 1200 px el menú pasa a desplegable; en móvil el menú compacto cabe entero, el globo de "Cómo trabajamos" queda de fondo suave, en la FAQ van primero las preguntas y luego el chat, las flechas del carrusel van debajo de las tarjetas y el pie se reparte en dos columnas.
+- Al actualizar desde el diseño: los pasos para convertir el tablero están en el historial de la sesión de 2026-11-23 (sacar `<style>` a `styles.css`, el cuerpo del div raíz a `index.html`, cambiar `/_blob/…` por `assets/img/…` y volver a añadir al final los bloques propios del CSS).
 
 ## Sistema de diseño anterior (referencia)
 
@@ -42,8 +46,8 @@ Clases en `index.html`, activadas por `initReveals()` en `main.js` (añade `.rvo
 
 ## Formulario de contacto
 
-Envía a n8n (`CONFIG.contactWebhook` en `main.js`) como `application/x-www-form-urlencoded` con `mode: 'no-cors'`, para no depender de CORS. Desde el diseño v2 el formulario es una frase ("Hola, me llamo…") con postal en directo. Campos que envía: `request` (siempre "Reunión gratuita"), `name`, `company`, `email`, `service` (los chips elegidos, separados por comas), `message`, `privacy` (casilla obligatoria), `source`, `page`, `sentAt`. Ya no hay teléfono. Incluye honeypot `website` anti-spam.
-- La URL actual es la de **test** (`/webhook-test/`): solo recibe datos con n8n escuchando. Para producción, cambiar a `/webhook/` y activar el workflow.
+Envía a n8n (`CONFIG.contactWebhook` en `main.js`) como `application/x-www-form-urlencoded` con `mode: 'no-cors'`, para no depender de CORS. Desde 2026-11-23 es un formulario clásico (nombre*, email*, negocio, servicios en chips, mensaje) con la postal al lado. Campos que envía: `request` (siempre "Reunión gratuita"), `name`, `company`, `email`, `service` (los chips elegidos, separados por comas: Diseño web, Publicidad digital, Posicionamiento SEO, Social Media, Estrategia digital, Email marketing, Aún no lo sé), `message`, `privacy` (casilla obligatoria), `source`, `page`, `sentAt`. Ya no hay teléfono. Incluye honeypot `website` anti-spam.
+- Desde 2026-11-23 la URL es la de **producción** (`/webhook/`): solo recibe datos si el workflow está activo en n8n. Para pruebas, la de test es la misma con `/webhook-test/`.
 
 ## Mensaje de marca (desde 2026-11-20)
 
@@ -67,7 +71,8 @@ Inspirado en la estructura de agenciaicaro.com, con la paleta propia:
 
 ## Pendiente
 
-- Contenido real en los [corchetes]: proyectos e imágenes, cifras del manifiesto, email, dirección, redes, textos legales.
+- Datos de contacto (desde 2026-11-23): email maraebluestudio@gmail.com, Madrid (España), Instagram @maraebluemarketing. LinkedIn todavía no existe: no ponerlo hasta que lo haya.
+- Contenido real en los [corchetes]: proyectos e imágenes, textos legales (aviso legal, privacidad, cookies).
 - Archivos .woff2 de Agrandir Wide (licencia web de Pangram Pangram) → `@font-face` en `styles.css`.
 - Foto del hero a mayor resolución (la actual mide 740 px de ancho) y comprobar su licencia.
 - Dominio propio (Settings → Pages → Custom domain).

@@ -1,4 +1,4 @@
-/* Marae Blue Studio — estilos (diseño v2, 2026-11-22) */
+/* Marae Blue Studio — estilos (diseño v2, 2026-11-23) */
 [hidden]{display:none !important}
 body{margin:0;background:#ffffff}
 a{color:#2E4A66}a:hover{color:#22384F}
@@ -1229,11 +1229,11 @@ main{position:relative;background:#ffffff}
 
 /* FOOTER EN VENTANA (como el hero) */
 .ft-win{position:relative;overflow:hidden;background:#111214;-webkit-clip-path:inset(calc(var(--inset) + (1 - var(--fp, 1)) * 56px) round calc(var(--rad) + (1 - var(--fp, 1)) * 16px));clip-path:inset(calc(var(--inset) + (1 - var(--fp, 1)) * 56px) round calc(var(--rad) + (1 - var(--fp, 1)) * 16px));will-change:clip-path}
-.ft-bg{position:absolute;inset:-4%;background-image:url(../img/hero-mar.jpg);background-size:cover;background-position:50% 60%;filter:grayscale(1) brightness(0.32) contrast(1.1);opacity:0.55;transform:scale(calc(1.12 - var(--fp, 1) * 0.12));pointer-events:none}
+.ft-bg{position:absolute;inset:-4%;background-image:url(../img/pie-fondo.jpg);background-size:cover;background-position:50% 45%;filter:grayscale(1) brightness(0.62) contrast(1.08);opacity:0.7;transform:scale(calc(1.12 - var(--fp, 1) * 0.12));pointer-events:none}
 .ft-win > .wrap,.ft-win > .ft-word{position:relative}
 .ft-win .ft-in{padding-top:104px}
 .ft-win .ft-legal{padding-bottom:42px}
-.ft-word{color:rgba(255,255,255,0.07)}
+.ft-word{color:rgba(255,255,255,0.16)}
 @media (max-width: 900px){.seafoot.ft{--inset:8px;--rad:22px}.ft-win .ft-in{padding-top:80px}.ft-win .ft-legal{padding-bottom:30px}}
 
 /* FOOTER EN MÓVIL: sin ventana y con menos animación */
@@ -1251,6 +1251,422 @@ main{position:relative;background:#ffffff}
   .ft-word{margin-top:40px;font-size:24vw}
   .ft-win .ft-legal{padding-bottom:28px;flex-direction:column;align-items:flex-start;gap:8px}
 }
+
+/* SERVICIOS: frase "Estar presentes…" más grande, visible y en negrita */
+.svx-win-l .svx-win-lead{font-size:clamp(30px,3.1vw,46px) !important;line-height:1.18 !important;font-weight:700 !important;letter-spacing:-0.02em;background:none;-webkit-text-fill-color:#ffffff;color:#ffffff}
+.svx-win-l .svx-win-lead em{-webkit-text-fill-color:#F2A65A;color:#F2A65A;font-weight:700 !important}
+@media (max-width: 640px){.svx-win-l .svx-win-lead{font-size:28px !important}}
+
+/* "Estar presentes…" con la letra del logotipo (Antonio) */
+.svx-win-l .svx-win-lead{font-family:"Antonio","Bebas Neue",sans-serif !important;font-size:clamp(36px,3.8vw,58px) !important;line-height:1.08 !important;font-weight:600 !important;letter-spacing:0.005em}
+.svx-win-l .svx-win-lead em{font-weight:600 !important}
+@media (max-width: 640px){.svx-win-l .svx-win-lead{font-size:34px !important}}
+
+.svx-win-l .svx-win-lead{will-change:transform}
+
+/* "Si tú creces…" en mayúsculas y con la letra del logotipo */
+.svx-win-txt .svx-win-close{font-family:"Antonio","Bebas Neue",sans-serif !important;font-size:clamp(26px,2.4vw,36px) !important;line-height:1.1 !important;font-weight:600 !important;text-transform:uppercase;letter-spacing:0.02em;color:#ffffff !important;margin-top:14px !important}
+.svx-win-txt .svx-win-close::before{width:36px;height:2px;flex:none}
+@media (max-width: 640px){.svx-win-txt .svx-win-close{font-size:24px !important}}
+
+/* "Estar presentes…": aparece palabra a palabra de arriba abajo con el scroll */
+.svx-win-lead .lw{--k:clamp(0, calc((var(--p, 1) * (var(--n) + 4) - var(--i)) / 4), 1);display:inline-block;opacity:calc(0.12 + 0.88 * var(--k));transform:translateY(calc((1 - var(--k)) * -0.55em));filter:blur(calc((1 - var(--k)) * 6px));will-change:transform,opacity}
+@media (prefers-reduced-motion: reduce){.svx-win-lead .lw{opacity:1;transform:none;filter:none}}
+
+/* "Todo gran proyecto…": misma letra y mismo efecto que "Estar presentes…" */
+[data-lw] .lw{--k:clamp(0, calc((var(--p, 1) * (var(--n) + 4) - var(--i)) / 4), 1);display:inline-block;opacity:calc(0.12 + 0.88 * var(--k));transform:translateY(calc((1 - var(--k)) * -0.55em));filter:blur(calc((1 - var(--k)) * 6px));will-change:transform,opacity}
+.h-sec.lw-h{font-family:"Antonio","Bebas Neue",sans-serif;font-size:clamp(44px,5.4vw,80px);line-height:1.04;font-weight:600;letter-spacing:0.005em;max-width:18ch;color:#0a0a0b}
+@media (max-width: 640px){.h-sec.lw-h{font-size:42px}}
+@media (prefers-reduced-motion: reduce){[data-lw] .lw{opacity:1;transform:none;filter:none}}
+
+/* POR QUÉ: texto encuadrado como el bloque de Servicios (versión clara) */
+#porque .sechead{margin-bottom:0}
+.pq-win{position:relative;margin:40px 0 72px;padding-top:52px}
+.pq-win::before{content:"";position:absolute;left:0;top:0;height:1px;width:100%;background:linear-gradient(90deg,#E8743B 0%,rgba(232,116,59,0.45) 18%,rgba(10,10,11,0.10) 55%,transparent 100%);transform-origin:left center;transform:scaleX(0);transition:transform 1600ms var(--ease) 200ms}
+.pq-win.in::before,.ms:not(.rvon) .pq-win::before{transform:scaleX(1)}
+.pq-win::after{content:"";position:absolute;left:-8%;top:-40px;width:55%;height:120%;background:radial-gradient(ellipse at 30% 45%,rgba(232,116,59,0.10) 0%,transparent 70%);filter:blur(20px);pointer-events:none;z-index:0}
+.pq-body{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:80px;align-items:start}
+.pq-l{position:relative;padding-left:32px}
+.pq-l::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:1px;background:linear-gradient(180deg,#E8743B 0%,rgba(232,116,59,0.25) 60%,transparent 100%)}
+.pq-lead{margin:0;font-family:"Antonio","Bebas Neue",sans-serif;font-size:clamp(32px,3.3vw,50px);line-height:1.1;font-weight:600;letter-spacing:0.005em;color:#0a0a0b}
+.pq-lead em{font-style:normal;color:#B4532A}
+.pq-txt{display:flex;flex-direction:column;gap:16px;padding-top:4px}
+.pq-txt p{margin:0;font-size:16px;line-height:1.7;color:#5c6170}
+.pq-txt .pq-close{display:flex;align-items:center;gap:14px;margin-top:10px;font-family:"Antonio","Bebas Neue",sans-serif;font-size:clamp(22px,1.9vw,28px);line-height:1.15;font-weight:600;text-transform:uppercase;letter-spacing:0.02em;color:#0a0a0b}
+.pq-close::before{content:"";width:36px;height:2px;background:#E8743B;flex:none}
+@media (max-width: 900px){.pq-body{grid-template-columns:minmax(0,1fr);gap:28px}.pq-win{margin:32px 0 56px;padding-top:40px}}
+@media (max-width: 640px){.pq-lead{font-size:30px}.pq-txt .pq-close{font-size:21px}}
+@media (prefers-reduced-motion: reduce){.pq-win::before{transition:none;transform:scaleX(1)}}
+
+/* CONTACTO: respuesta rápida */
+.ct-fast{display:inline-flex;align-items:center;gap:12px;align-self:flex-start;padding:10px 18px 10px 14px;border-radius:999px;background:#FFF7F1;border:1px solid #F2C29A;font-size:15px;color:#0a0a0b}
+.ct-fast strong{display:inline-block;margin-right:10px;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#B4532A}
+.ct-fast-dot{width:9px;height:9px;border-radius:999px;background:#E8743B;flex:none;animation:faqLive 2s ease-out infinite}
+@media (prefers-reduced-motion: reduce){.ct-fast-dot{animation:none}}
+/* POR QUÉ: el bloque encuadrado siempre visible */
+.pq-win::before{transform:scaleX(1)}
+
+/* TÍTULOS DE SECCIÓN: misma letra y mismo efecto palabra a palabra en toda la web */
+.on-dark .h-sec.lw-h{color:#ffffff}
+.h-sec.lw-h{max-width:20ch}
+.ft-title.lw-ft{font-family:"Antonio","Bebas Neue",sans-serif;font-size:clamp(44px,5.4vw,84px);line-height:1.02;font-weight:600;letter-spacing:0.005em}
+@media (max-width: 640px){.ft-title.lw-ft{font-size:44px}}
+
+/* CONTACTO: presupuesto sin compromiso */
+.ct-quote{position:relative;display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.2fr);gap:48px;align-items:center;margin-bottom:40px;padding:36px 44px 36px 60px;border-radius:28px;background:#111214;color:#ffffff;overflow:hidden}
+.ct-quote::after{content:"";position:absolute;right:-120px;top:-160px;width:420px;height:420px;border-radius:999px;background:radial-gradient(closest-side,rgba(232,116,59,0.22),rgba(232,116,59,0));pointer-events:none}
+.ct-quote .svx-node{left:36px;top:50%;margin-top:-4px}
+.ct-quote-t{position:relative;margin:0;font-family:"Antonio","Bebas Neue",sans-serif;font-size:clamp(30px,3vw,46px);line-height:1.02;font-weight:600;text-transform:uppercase;letter-spacing:0.02em;color:#ffffff}
+.ct-quote p{position:relative;margin:0;font-size:17px;line-height:1.65;color:#B9BCC4}
+@media (max-width: 900px){.ct-quote{grid-template-columns:minmax(0,1fr);gap:16px;padding:30px 26px 30px 48px}.ct-quote .svx-node{left:24px;top:40px;margin-top:0}}
+
+/* POR QUÉ: subtítulo "Nos diferencia" antes de las tarjetas */
+.pq-sub{display:flex;align-items:center;gap:14px;margin:0 0 28px;font-family:"Antonio","Bebas Neue",sans-serif;font-size:clamp(28px,2.6vw,40px);line-height:1;font-weight:600;text-transform:uppercase;letter-spacing:0.02em;color:#0a0a0b}
+.pq-sub::before{content:"";width:36px;height:2px;background:#E8743B;flex:none}
+
+/* CONTACTO: cabecera compacta y estructurada */
+.ct-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:48px;align-items:stretch;margin-bottom:40px}
+.ct-intro-l{display:flex;flex-direction:column;justify-content:center;gap:20px}
+.ct-intro-l .lead{margin:0;max-width:46ch}
+.ct-intro .ct-quote{display:flex;flex-direction:column;justify-content:center;gap:16px;margin:0;padding:36px 40px 34px 60px}
+.ct-intro .ct-quote .svx-node{top:46px;margin-top:0}
+.ct-intro .ct-quote-t{font-size:clamp(28px,2.6vw,40px)}
+.ct-intro .ct-quote p{font-size:16px}
+.ct-data{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin-top:6px;padding-top:18px;border-top:1px solid #2b2e35}
+.ct-data-mail{color:#ffffff;font-size:17px;font-weight:600;text-decoration:none;background-image:linear-gradient(#E8743B,#E8743B);background-size:0 2px;background-repeat:no-repeat;background-position:0 100%;padding-bottom:2px;transition:background-size 320ms var(--ease)}
+.ct-data-mail:hover{color:#ffffff;background-size:100% 2px}
+.ct-data-addr{font-size:15px;color:#B9BCC4}
+.ct-data .ct-fast{background:rgba(232,116,59,0.12);border-color:rgba(242,166,90,0.45);color:#EDEEF0}
+.ct-data .ct-fast strong{color:#F2A65A}
+@media (max-width: 900px){.ct-intro{grid-template-columns:minmax(0,1fr);gap:28px;margin-bottom:28px}.ct-intro .ct-quote{padding:30px 24px 28px 48px}.ct-intro .ct-quote .svx-node{left:24px;top:40px}}
+
+/* CÓMO TRABAJAMOS: para todo tipo de negocio */
+.cw-win{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:64px;align-items:start;margin-top:80px;padding-top:52px}
+.cw-win::before{content:"";position:absolute;left:0;top:0;height:1px;width:100%;background:linear-gradient(90deg,#E8743B 0%,rgba(232,116,59,0.45) 18%,rgba(10,10,11,0.10) 55%,transparent 100%)}
+.cw-l{display:flex;flex-direction:column;gap:24px}
+.cw-t{display:flex;align-items:center;gap:14px;margin:0;font-family:"Antonio","Bebas Neue",sans-serif;font-size:clamp(30px,3vw,46px);line-height:1;font-weight:600;text-transform:uppercase;letter-spacing:0.02em;color:#0a0a0b}
+.cw-t::before{content:"";width:36px;height:2px;background:#E8743B;flex:none}
+.cw-tags{display:flex;flex-wrap:wrap;gap:10px}
+.cw-tag{display:inline-flex;align-items:center;min-height:42px;padding:8px 18px;border-radius:999px;border:1px solid #d6d9df;background:#ffffff;color:#24262c;font-size:15px;font-weight:500;transition:transform 420ms cubic-bezier(0.34,1.56,0.64,1),border-color 200ms,background-color 200ms,color 200ms}
+.cw-tag:hover{transform:translateY(-3px) scale(1.04);border-color:#E8743B;background:#FFF7F1;color:#0a0a0b}
+.cw-txt{display:flex;flex-direction:column;gap:16px}
+.cw-txt p{margin:0;font-size:16px;line-height:1.7;color:#5c6170}
+.cw-steps{display:flex;flex-wrap:wrap;gap:10px 28px;margin:8px 0 0;padding:16px 0 0;list-style:none;border-top:1px solid #e3e5ea}
+.cw-steps li{display:inline-flex;align-items:center;gap:10px;font-family:"Antonio","Bebas Neue",sans-serif;font-size:22px;font-weight:600;text-transform:uppercase;letter-spacing:0.02em;color:#0a0a0b}
+.cw-steps span{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:999px;background:#0a0a0b;color:#F2A65A;font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700}
+@media (max-width: 900px){.cw-win{grid-template-columns:minmax(0,1fr);gap:28px;margin-top:56px;padding-top:40px}}
+
+
+/* CONTACTO: "Cuéntanos tu idea." de gris a negro al pasar el ratón */
+#contacto .h-sec.lw-h{cursor:default}
+#contacto .h-sec.lw-h .lw{color:#8A8F99;transition:color 450ms var(--ease) calc(var(--i) * 70ms)}
+#contacto .h-sec.lw-h:hover .lw{color:#0a0a0b}
+
+/* FOOTER: frase de marca en negrita y mayúsculas */
+.ft-brand p{font-family:"Antonio","Bebas Neue",sans-serif;font-size:22px;line-height:1.2;font-weight:600;text-transform:uppercase;letter-spacing:0.02em;color:#ffffff;max-width:24ch}
+
+/* FOOTER: títulos de columna en negrita */
+.ft-col .label{font-weight:800;font-size:13px;letter-spacing:0.14em;color:#ffffff}
+
+/* FOOTER: columnas compactas en panel para separarlas de la foto */
+.ft-in{gap:48px}
+.ft-cols{grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));gap:28px 36px;padding:30px 36px;border-radius:24px;background:rgba(14,15,17,0.72);border:1px solid rgba(255,255,255,0.08);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.ft-brand{justify-content:center;padding-right:24px;border-right:1px solid rgba(255,255,255,0.08)}
+.ft-brand p{font-size:20px;max-width:20ch}
+.ft-col{gap:0}
+.ft-col .label{margin-bottom:8px}
+.ft-link{min-height:28px;font-size:14px;color:#D9DBE0}
+.ft-addr{font-size:13px;margin-top:6px}
+@media (max-width: 1100px){.ft-brand{border-right:0;padding-right:0;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.08)}}
+@media (max-width: 640px){.ft-cols{padding:24px 20px;gap:24px 16px}}
+
+/* FOOTER: columnas sin recuadro, limpias */
+.ft-cols{padding:28px 0 0;border-radius:0;background:none;border:0;border-top:1px solid rgba(255,255,255,0.14);-webkit-backdrop-filter:none;backdrop-filter:none}
+.ft-brand{border-right:1px solid rgba(255,255,255,0.12)}
+.ft-link,.ft-col .label,.ft-brand p{text-shadow:0 1px 12px rgba(0,0,0,0.55)}
+@media (max-width: 640px){.ft-cols{padding:24px 0 0}}
+
+/* FOOTER: "MARAE BLUE" difuminado hacia los bordes */
+.ft-word{-webkit-mask-image:radial-gradient(ellipse 62% 85% at 50% 38%,#000 40%,rgba(0,0,0,0.55) 68%,transparent 100%);mask-image:radial-gradient(ellipse 62% 85% at 50% 38%,#000 40%,rgba(0,0,0,0.55) 68%,transparent 100%)}
+
+/* FOOTER: frase de marca en movimiento (ola de color + flotación suave) */
+.ft-move .lw{animation:ftFloat 4.2s ease-in-out infinite,ftTide 6s ease-in-out infinite;animation-delay:calc(var(--i) * -0.32s),calc(var(--i) * 0.28s)}
+@keyframes ftFloat{0%,100%{translate:0 0}50%{translate:0 -4px}}
+@keyframes ftTide{0%,70%,100%{color:#ffffff}35%{color:#F2A65A}}
+@media (prefers-reduced-motion: reduce){.ft-move .lw{animation:none}}
+
+/* CONTACTO: la carta y el sobre con el sello de Marae */
+.env-wrap{display:flex;flex-direction:column;align-items:center;gap:18px;max-width:920px;margin:0 auto}
+.env-t{color:#5c6170}
+.env{position:relative;width:100%;overflow:hidden;border-radius:0 0 22px 22px;padding-top:8px}
+.env-back{position:absolute;left:0;right:0;bottom:0;height:300px;border-radius:22px;background:#F6DFCB;box-shadow:inset 0 0 0 1px #EFC9A6;z-index:1}
+.env-letter{position:relative;z-index:2;display:flex;flex-direction:column;gap:26px;margin:0 36px;padding:44px 48px 300px;border-radius:8px 8px 0 0;background:#ffffff;box-shadow:0 24px 50px rgba(10,10,11,0.10),0 0 0 1px #ECEDF0}
+.env-flap{position:absolute;left:0;right:0;bottom:140px;height:160px;z-index:4;background:#F2D2B6;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top center;transform:scaleY(-1);opacity:0;pointer-events:none}
+.env-front{position:absolute;left:0;right:0;bottom:0;height:300px;z-index:3;pointer-events:none;background:linear-gradient(180deg,#FFF3E8 0%,#FBE6D4 100%);clip-path:polygon(0 0,50% 46%,100% 0,100% 100%,0 100%);border-radius:0 0 22px 22px;filter:drop-shadow(0 -1px 0 #EFC9A6)}
+.env-addr{position:absolute;left:40px;bottom:34px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;align-items:baseline;max-width:60%}
+.env-addr span{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#9C4320}
+.env-addr b{font-family:"Antonio","Bebas Neue",sans-serif;font-size:24px;line-height:1.1;font-weight:600;text-transform:uppercase;letter-spacing:0.02em;color:#0a0a0b;overflow-wrap:anywhere}
+.env-addr b.ph{color:#B9A79A}
+.env-stamp{position:absolute;right:36px;bottom:40px;width:74px;height:86px;display:flex;align-items:center;justify-content:center;background:#ffffff;border:2px dashed #F2A65A;border-radius:6px;transform:rotate(4deg)}
+.env-mark{position:absolute;right:92px;bottom:58px;opacity:0.6}
+.env-letter .ct-foot{border-top:1px solid #ECEDF0}
+.env.sending .env-letter{animation:envIn 850ms cubic-bezier(0.55,0,0.75,0.4) forwards}
+.env.sending .env-flap{animation:envFlap 480ms cubic-bezier(0.34,1.4,0.64,1) 780ms forwards}
+.env.sending .env-stamp{animation:envStamp 420ms cubic-bezier(0.34,1.56,0.64,1) 1200ms both}
+.env.sending{animation:envFly 750ms cubic-bezier(0.6,-0.2,0.7,0.2) 1550ms forwards}
+@keyframes envIn{to{transform:translateY(100%)}}
+@keyframes envFlap{from{opacity:1;transform:scaleY(-1)}to{opacity:1;transform:scaleY(1)}}
+@keyframes envStamp{0%{transform:rotate(4deg) scale(1)}45%{transform:rotate(-6deg) scale(1.25)}100%{transform:rotate(4deg) scale(1)}}
+@keyframes envFly{to{transform:translate(160px,-260px) rotate(12deg) scale(0.6);opacity:0}}
+@media (max-width: 900px){
+  .env-letter{margin:0 14px;padding:28px 22px 230px}
+  .env-back,.env-front{height:230px}
+  .env-flap{bottom:110px;height:120px}
+  .env-addr{left:22px;bottom:24px;max-width:58%}
+  .env-addr b{font-size:19px}
+  .env-stamp{right:20px;bottom:28px;width:60px;height:70px}
+  .env-mark{display:none}
+}
+@media (prefers-reduced-motion: reduce){.env.sending,.env.sending .env-letter,.env.sending .env-flap,.env.sending .env-stamp{animation:none}}
+
+/* POR QUÉ: "Una extensión de tu empresa" como carta náutica */
+.chart .ch-grid line{stroke:rgba(255,255,255,0.06);stroke-width:1}
+.chart .ch-frame{fill:none;stroke:rgba(255,255,255,0.14);stroke-width:1;stroke-dasharray:2 6}
+.chart .ch-waves path{fill:none;stroke:rgba(255,255,255,0.18);stroke-width:1.2;stroke-linecap:round}
+.chart .ch-rose circle{fill:none;stroke:rgba(255,255,255,0.22);stroke-width:1}
+.chart .ch-rose path{fill:rgba(255,255,255,0.35)}
+.chart .ch-rose .ch-rose-n{fill:#F2A65A}
+.chart .ch-rose text{font-family:"Antonio",sans-serif;font-size:11px;font-weight:600;fill:#F2A65A}
+.chart .ch-coord{font-family:"Montserrat",sans-serif;font-size:9px;letter-spacing:0.14em;fill:rgba(255,255,255,0.35)}
+.chart .ch-route{fill:none;stroke-linecap:round;stroke-dasharray:7 7;animation:chSail 1.6s linear infinite}
+.chart .ch-a{stroke:#A7ABB4;stroke-width:2}
+.chart .ch-b{stroke:#F2A65A;stroke-width:2}
+.chart .ch-one{stroke:#F2A65A;stroke-width:3.5;stroke-dasharray:10 7}
+@keyframes chSail{to{stroke-dashoffset:-14}}
+.chart .ch-port circle{fill:#111214;stroke:#D9DBE0;stroke-width:2}
+.chart .ch-port .ch-port-o{stroke:#F2A65A}
+.chart .ch-boat path{fill:#ffffff}
+.chart .ch-boat-b path,.chart .ch-boat-one path{fill:#F2A65A}
+.chart .ch-x{stroke:#ffffff;stroke-width:3;stroke-linecap:round}
+@media (prefers-reduced-motion: reduce){.chart .ch-route{animation:none}.chart .ch-boat{display:none}}
+
+.chart .ch-boat{transform-box:fill-box;transform-origin:center bottom;animation:chBob 2.6s ease-in-out infinite}
+@keyframes chBob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-3px) rotate(3deg)}}
+@media (prefers-reduced-motion: reduce){.chart .ch-boat{display:block;animation:none}}
+
+/* CÓMO TRABAJAMOS: planeta de fondo detrás del esquema */
+.method{isolation:isolate}
+.globe{position:absolute;left:50%;top:50%;width:min(640px,90vw);aspect-ratio:1 / 1;transform:translate(-50%,-46%);z-index:-1;pointer-events:none;opacity:0.9}
+.globe svg{display:block;overflow:visible}
+.gl-body{fill:url(#glShade)}
+.gl-rim{fill:none;stroke:rgba(10,10,11,0.14);stroke-width:1.2}
+.gl-par ellipse{fill:none;stroke:rgba(10,10,11,0.08);stroke-width:1}
+.gl-mer{fill:none;stroke:rgba(232,116,59,0.22);stroke-width:1;transform-box:view-box;transform-origin:0 0;animation:glSpin 18s linear infinite}
+@keyframes glSpin{0%{transform:scaleX(1)}50%{transform:scaleX(0)}100%{transform:scaleX(-1)}}
+.gl-orbit{fill:none;stroke:rgba(232,116,59,0.35);stroke-width:1.2;stroke-dasharray:3 7;animation:chSail 2.4s linear infinite}
+.gl-sat{fill:#E8743B;transform-box:view-box;transform-origin:0 0;animation:glOrbit 22s linear infinite}
+@keyframes glOrbit{to{transform:rotate(360deg)}}
+@media (max-width: 900px){.globe{width:120vw;top:40%;opacity:0.6}}
+@media (prefers-reduced-motion: reduce){.gl-mer,.gl-sat{animation:none}}
+
+/* PLANETA: tonos más oscuros */
+.gl-body{fill:url(#glShade)}
+#glShade stop:first-child{stop-color:#3A3D44;stop-opacity:0.10}
+#glShade stop:last-child{stop-color:#111214;stop-opacity:0.28}
+.gl-rim{stroke:rgba(10,10,11,0.38);stroke-width:1.4}
+.gl-par ellipse{stroke:rgba(10,10,11,0.22)}
+.gl-mer{stroke:rgba(180,83,42,0.45);stroke-width:1.2}
+.gl-orbit{stroke:rgba(180,83,42,0.55)}
+
+/* PLANETA: un toque más negro */
+#glShade stop:first-child{stop-color:#24262c;stop-opacity:0.30}
+#glShade stop:last-child{stop-color:#0a0a0b;stop-opacity:0.55}
+.gl-rim{stroke:rgba(10,10,11,0.6);stroke-width:1.6}
+.gl-par ellipse{stroke:rgba(10,10,11,0.32)}
+.gl-mer{stroke:rgba(180,83,42,0.6);stroke-width:1.3}
+.globe{opacity:1}
+
+/* PLANETA: cuerpo claro, líneas y contorno oscuros */
+#glShade stop:first-child{stop-color:#ffffff;stop-opacity:0.95}
+#glShade stop:last-child{stop-color:#d9dbe0;stop-opacity:0.95}
+.gl-rim{stroke:#24262c;stroke-width:1.8}
+.gl-par ellipse{stroke:rgba(10,10,11,0.45);stroke-width:1.1}
+.gl-mer{stroke:rgba(10,10,11,0.55);stroke-width:1.2}
+.gl-orbit{stroke:rgba(232,116,59,0.7)}
+
+/* CONTACTO: postal sencilla, clara y fina */
+.pc{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:64px}
+.pc .ct-form{gap:26px;padding:8px 0 0;background:none;border-radius:0}
+.pc .ct-line{font-size:clamp(18px,1.6vw,23px);line-height:2;font-weight:400;color:#24262c}
+.pc .ct-in{border-bottom:1px solid #C9CCD3;font-weight:500;color:#0a0a0b;padding:0 4px}
+.pc .ct-in:focus{border-bottom:1px solid #E8743B;background:none}
+.pc .ct-chips{gap:8px}
+.pc .ct-chip{min-height:40px;padding:6px 16px;font-size:14px;border-color:#dcdee3;background:none}
+.pc .ct-plus{display:none}
+.pc .ct-chip.on{background:#0a0a0b;border-color:#0a0a0b;color:#ffffff;animation:none}
+.pc .ct-ta{min-height:96px;font-size:16px;border-color:#dcdee3;border-radius:12px;background:#ffffff}
+.pc .ct-foot{justify-content:flex-start;border-top:0;padding-top:4px}
+.pc .ct-send{box-shadow:none}
+.pc .ct-side{gap:14px}
+.pc .ct-side-t{color:#8A8F99}
+.pc .ct-card{padding:32px 30px 28px;border-radius:14px;background:#FFFBF7;border:1px solid #EEDFD1;box-shadow:0 20px 50px rgba(10,10,11,0.06);transform:rotate(-1deg)}
+.pc .ct-card:hover{transform:rotate(0)}
+.pc .ct-stamp{top:24px;right:24px;width:52px;height:60px;border:1px dashed #E8B48A;border-radius:4px;transform:none;background:#ffffff}
+.pc .ct-rows{max-width:calc(100% - 70px)}
+.pc .ct-row{border-bottom:1px solid #F1E6DC;padding:8px 0;font-size:14px}
+.pc .ct-row span{color:#B4532A;font-weight:600}
+.pc .ct-row b{font-weight:500}
+.pc .ct-body{min-height:90px;font-size:15px;color:#3a3d44}
+.pc .ct-tag{padding:4px 10px;background:none;border:1px solid #E8743B;color:#B4532A;font-weight:500;animation:none}
+@media (max-width: 900px){.pc{grid-template-columns:minmax(0,1fr);gap:40px}.pc .ct-card{transform:none}}
+
+/* CONTACTO: formulario claro y visible */
+.pc{align-items:start}
+.cf{display:flex;flex-direction:column;gap:24px;padding:36px 36px 34px;border-radius:24px;background:#ffffff;border:1px solid #e3e5ea;border-top:4px solid #E8743B;box-shadow:0 30px 70px rgba(10,10,11,0.10)}
+.cf-head{display:flex;flex-direction:column;gap:6px}
+.cf-t{margin:0;font-family:"Antonio","Bebas Neue",sans-serif;font-size:clamp(28px,2.4vw,36px);line-height:1;font-weight:600;text-transform:uppercase;letter-spacing:0.02em;color:#0a0a0b}
+.cf-head p{margin:0;font-size:15px;color:#5c6170}
+.cf-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.cf-full{grid-column:1 / -1}
+.cf-field{display:flex;flex-direction:column;gap:8px}
+.cf-field label,.cf-lbl{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#24262c}
+.cf-field input,.cf-field textarea{width:100%;min-height:50px;padding:12px 16px;font-family:inherit;font-size:16px;color:#0a0a0b;background:#f6f7f9;border:1px solid #d6d9df;border-radius:12px;transition:border-color 200ms,box-shadow 200ms,background-color 200ms}
+.cf-field textarea{min-height:120px;resize:vertical}
+.cf-field input::placeholder,.cf-field textarea::placeholder{color:#8A8F99}
+.cf-field input:focus,.cf-field textarea:focus{outline:none;background:#ffffff;border-color:#E8743B;box-shadow:0 0 0 4px rgba(232,116,59,0.15)}
+.cf-chips .ct-chip{min-height:42px;padding:8px 16px;font-size:14px;background:#ffffff}
+.cf-send{width:100%;justify-content:center;min-height:56px;font-size:13px}
+.cf-send:hover{transform:translateY(-2px)}
+@media (max-width: 640px){.cf{padding:26px 20px}.cf-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* POSTAL: sello de marca como estampa de tinta antigua */
+.pc .ct-rows{max-width:calc(100% - 118px)}
+.pc-ink{position:absolute;top:14px;right:14px;width:118px;height:118px;transform:rotate(-14deg);opacity:0.82;mix-blend-mode:multiply;pointer-events:none;-webkit-mask-image:radial-gradient(circle at 35% 30%,#000 55%,rgba(0,0,0,0.55) 85%,rgba(0,0,0,0.35) 100%);mask-image:radial-gradient(circle at 35% 30%,#000 55%,rgba(0,0,0,0.55) 85%,rgba(0,0,0,0.35) 100%);transition:transform 600ms cubic-bezier(0.34,1.56,0.64,1)}
+.pc .ct-card:hover .pc-ink{transform:rotate(-8deg) scale(1.04)}
+.pc-ink-ring{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.pc-ink-ring circle{fill:none;stroke:#9C4320;stroke-width:1.6}
+.pc-ink-ring circle:nth-child(3){stroke-width:0.8}
+.pc-ink-ring circle:nth-child(4){stroke-width:1.2;stroke-dasharray:2 3}
+.pc-ink-ring text{font-family:"Antonio","Bebas Neue",sans-serif;font-size:10.5px;font-weight:600;letter-spacing:0.18em;fill:#9C4320}
+.pc-ink-img{position:absolute;left:50%;top:50%;width:52px;height:auto;transform:translate(-50%,-50%);filter:grayscale(1) brightness(0.55) sepia(1) saturate(4) hue-rotate(-18deg) contrast(1.2) blur(0.2px)}
+@media (max-width: 640px){.pc-ink{width:96px;height:96px;top:10px;right:10px}.pc .ct-rows{max-width:calc(100% - 96px)}.pc-ink-img{width:42px}}
+
+/* CONTACTO: respuesta rápida más llamativa */
+.ct-data .ct-fast-x{display:inline-flex;align-items:center;gap:14px;margin-top:6px;padding:12px 22px 12px 14px;border-radius:16px;background:#E8743B;border:0;color:#0a0a0b;animation:ctFastGlow 2.4s ease-in-out infinite}
+.ct-fast-ic{flex:none;width:40px;height:40px;padding:7px;border-radius:999px;background:#0a0a0b;color:#F2A65A}
+.ct-fast-ic path:first-of-type{transform-origin:12px 13px;animation:ctTick 4s linear infinite}
+.ct-fast-txt{display:flex;flex-direction:column;gap:2px}
+.ct-data .ct-fast-x strong{margin:0;font-size:11px;font-weight:800;letter-spacing:0.14em;color:#0a0a0b;opacity:0.75}
+.ct-fast-txt b{font-family:"Antonio","Bebas Neue",sans-serif;font-size:24px;line-height:1;font-weight:600;text-transform:uppercase;letter-spacing:0.02em;color:#0a0a0b}
+@keyframes ctFastGlow{0%,100%{box-shadow:0 0 0 0 rgba(232,116,59,0.55)}50%{box-shadow:0 0 0 10px rgba(232,116,59,0)}}
+@keyframes ctTick{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.ct-data .ct-fast-x,.ct-fast-ic path:first-of-type{animation:none}}
+
+/* POSTAL: sello de cera caliente con el sello de Marae */
+.pc .ct-rows{max-width:calc(100% - 112px)}
+.pc-wax{position:absolute;top:16px;right:16px;width:104px;height:104px;transform:rotate(-10deg);pointer-events:none;filter:drop-shadow(0 4px 6px rgba(60,10,5,0.35)) drop-shadow(0 1px 1px rgba(60,10,5,0.4));transition:transform 600ms cubic-bezier(0.34,1.56,0.64,1)}
+.pc .ct-card:hover .pc-wax{transform:rotate(-4deg) scale(1.04)}
+.pc-wax-blob{position:absolute;inset:0;clip-path:polygon(98.8% 50.0%,92.9% 57.6%,94.2% 66.1%,87.2% 71.5%,85.4% 79.7%,79.0% 84.5%,71.5% 87.2%,65.8% 93.3%,57.4% 92.1%,50.0% 99.5%,42.5% 92.3%,35.2% 90.5%,27.3% 89.4%,19.0% 87.0%,16.8% 77.9%,11.8% 72.0%,5.9% 66.0%,1.6% 58.5%,-0.5% 50.0%,5.4% 42.1%,3.6% 33.1%,12.9% 28.6%,12.8% 18.8%,21.4% 15.9%,28.2% 12.3%,35.2% 9.3%,42.2% 6.0%,50.0% -2.2%,57.6% 6.9%,65.9% 6.2%,73.5% 9.3%,79.0% 15.4%,85.5% 20.2%,87.2% 28.5%,90.3% 35.3%,93.3% 42.4%);background:radial-gradient(circle at 32% 28%,#E2573F 0%,#B3301F 38%,#8C1F14 70%,#6A150D 100%)}
+.pc-wax-ring{position:absolute;inset:15px;border-radius:999px;background:radial-gradient(circle at 40% 35%,#B93522 0%,#9A2617 60%,#7E1B10 100%);box-shadow:inset 3px 3px 5px rgba(40,5,2,0.55),inset -2px -2px 4px rgba(255,150,120,0.35),0 0 0 1px rgba(255,140,110,0.18)}
+.pc-wax-img{position:absolute;left:50%;top:50%;width:50px;height:auto;transform:translate(-50%,-50%);filter:grayscale(1) brightness(0.35) drop-shadow(1px 1px 0 rgba(255,170,140,0.55)) drop-shadow(-1px -1px 0 rgba(40,5,2,0.55));opacity:0.75;mix-blend-mode:multiply}
+@media (max-width: 640px){.pc-wax{width:86px;height:86px;top:12px;right:12px}.pc-wax-ring{inset:12px}.pc-wax-img{width:40px}.pc .ct-rows{max-width:calc(100% - 92px)}}
+
+/* RESPUESTA RÁPIDA: gris grafito con detalles naranja */
+.ct-data .ct-fast-x{background:linear-gradient(135deg,#34373f 0%,#24262c 100%);border:1px solid rgba(242,166,90,0.55);color:#ffffff;animation:ctFastGlow2 2.6s ease-in-out infinite}
+.ct-data .ct-fast-x .ct-fast-ic{background:#F2A65A;color:#0a0a0b}
+.ct-data .ct-fast-x strong{color:#F2A65A;opacity:1}
+.ct-data .ct-fast-x .ct-fast-txt b{color:#ffffff}
+@keyframes ctFastGlow2{0%,100%{box-shadow:0 0 0 0 rgba(242,166,90,0.35)}50%{box-shadow:0 0 0 8px rgba(242,166,90,0)}}
+
+/* LACRE más real: naranja claro, relieve y forma orgánica */
+.pc-wax{width:112px;height:112px;filter:drop-shadow(0 7px 9px rgba(90,35,8,0.32)) drop-shadow(0 2px 2px rgba(90,35,8,0.45))}
+.pc-wax-blob,.pc-wax-gloss{clip-path:polygon(96.2% 50.0%,97.1% 56.2%,95.5% 62.2%,92.2% 67.5%,90.6% 73.4%,86.8% 78.3%,79.9% 79.9%,75.1% 82.7%,71.7% 87.5%,67.8% 92.9%,61.7% 93.5%,55.9% 94.4%,50.0% 95.4%,43.6% 98.3%,37.8% 95.6%,33.9% 88.9%,28.6% 87.1%,22.9% 85.3%,17.9% 82.1%,14.4% 77.3%,12.2% 71.8%,7.9% 67.4%,2.9% 62.6%,4.4% 56.0%,7.1% 50.0%,8.4% 44.5%,8.6% 38.9%,9.2% 33.1%,12.7% 28.5%,14.6% 22.8%,16.8% 16.8%,20.1% 11.0%,26.5% 9.3%,32.9% 8.7%,38.7% 7.7%,44.2% 6.2%,50.0% 5.1%,55.6% 7.1%,61.4% 7.4%,68.1% 6.3%,73.9% 8.5%,78.0% 13.5%,81.5% 18.5%,85.2% 23.0%,90.0% 26.9%,89.7% 33.5%,90.7% 39.1%,92.3% 44.4%)}
+.pc-wax-blob{background:radial-gradient(circle at 30% 24%,#FFC795 0%,#F59A5E 22%,#E8743B 48%,#C85A26 78%,#9C4019 100%)}
+.pc-wax-gloss{position:absolute;inset:0;background:radial-gradient(ellipse 26% 15% at 31% 22%,rgba(255,255,255,0.65),rgba(255,255,255,0) 70%),radial-gradient(ellipse 14% 8% at 72% 80%,rgba(255,230,205,0.4),rgba(255,230,205,0) 70%),radial-gradient(circle at 50% 50%,rgba(0,0,0,0) 58%,rgba(120,45,12,0.35) 100%)}
+.pc-drip{position:absolute;border-radius:999px;background:radial-gradient(circle at 35% 30%,#F8A869 0%,#E8743B 55%,#B9521F 100%)}
+.pc-drip.d1{width:22px;height:18px;left:4px;bottom:10px;border-radius:60% 40% 55% 45%}
+.pc-drip.d2{width:16px;height:14px;right:-2px;top:46px;border-radius:45% 55% 40% 60%}
+.pc-drip.d3{width:12px;height:11px;left:44px;bottom:-3px}
+.pc-wax-ring{inset:16px;background:radial-gradient(circle at 62% 66%,#F7924F 0%,#E06A2F 55%,#BC5222 100%);box-shadow:inset 5px 5px 7px rgba(100,35,6,0.55),inset -3px -3px 6px rgba(255,214,180,0.6),0 0 0 2px rgba(255,200,155,0.45),0 0 0 5px rgba(150,55,15,0.22)}
+.pc-wax-img{width:54px;filter:brightness(0) drop-shadow(1px 1.5px 0 rgba(255,215,180,0.85)) drop-shadow(-1px -1px 0 rgba(90,30,5,0.6));opacity:0.42;mix-blend-mode:multiply}
+@media (max-width: 640px){.pc-wax{width:92px;height:92px}.pc-wax-ring{inset:13px}.pc-wax-img{width:44px}}
+
+/* ===== MODO CLARO (botón en la barra) ===== */
+.mode-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;flex:none;border-radius:999px;border:1px solid rgba(255,255,255,0.28);background:rgba(255,255,255,0.06);color:#ffffff;cursor:pointer;transition:background-color 220ms,border-color 220ms,transform 420ms cubic-bezier(0.34,1.56,0.64,1)}
+.mode-btn:hover{border-color:#F2A65A;background:rgba(242,166,90,0.16);transform:rotate(-18deg)}
+.mode-btn svg{display:block}
+.mode-btn.m-only{display:none}
+@media (max-width: 900px){.mode-btn.m-only{display:inline-flex;margin-left:auto;margin-right:8px}}
+.ms,.ms section,.svx-row,.fq-chip,.faq-chat,.ct-quote{transition:background-color 500ms var(--ease),color 500ms var(--ease),border-color 500ms var(--ease)}
+/* Servicios */
+.lightmode .svx-sec{background:#f4f5f7;color:#0a0a0b}
+.lightmode .on-dark .h-sec.lw-h{color:#0a0a0b}
+.lightmode .svx-sec .lead{color:#5c6170}
+.lightmode .svx-win-l .svx-win-lead{-webkit-text-fill-color:#0a0a0b;color:#0a0a0b}
+.lightmode .svx-win-l .svx-win-lead em{-webkit-text-fill-color:#B4532A;color:#B4532A}
+.lightmode .svx-win-txt p{color:#5c6170 !important}
+.lightmode .svx-win-txt .svx-win-close{color:#0a0a0b !important}
+.lightmode .svx-win::before{background:linear-gradient(90deg,#E8743B 0%,rgba(232,116,59,0.45) 18%,rgba(10,10,11,0.10) 55%,transparent 100%)}
+.lightmode .svx-row{background:#ffffff !important;border-color:#e3e5ea !important}
+.lightmode .svx-row:hover{background:#ffffff !important;border-color:#E8743B !important;box-shadow:0 24px 50px rgba(10,10,11,0.08)}
+.lightmode .svx-title .line > span{background-image:linear-gradient(100deg,#0a0a0b 0%,#0a0a0b 40%,#E8743B 50%,#0a0a0b 60%,#0a0a0b 100%)}
+.lightmode .svx-main h3.disp{color:#0a0a0b}
+.lightmode .svx-list li{color:#5c6170 !important;border-top-color:#eceef0}
+.lightmode .svx-list li strong{color:#0a0a0b}
+.lightmode .svx-row:hover .svx-list li{color:#24262c !important}
+.lightmode .svx-list li::after{border-color:#9A9EA8}
+.lightmode .svx-n{color:#B4532A}
+.lightmode .svx-tailor{background:#ffffff;box-shadow:0 0 0 1px #e3e5ea}
+.lightmode .svx-tailor p{color:#24262c}
+/* Por qué: tarjetas claras (el mapa náutico sigue oscuro) */
+.lightmode #porque .bc:not(.blue):not(.bc-cta){background:#ffffff;border-color:#e3e5ea;color:#0a0a0b}
+.lightmode #porque .bc:not(.blue):not(.bc-cta) h3{color:#0a0a0b}
+.lightmode #porque .bc:not(.blue):not(.bc-cta) p,.lightmode #porque .bc:not(.blue):not(.bc-cta) p[style]{color:#5c6170 !important}
+.lightmode #porque .bc:not(.blue):not(.bc-cta) .label{color:#B4532A}
+/* Preguntas frecuentes */
+.lightmode .faq-sec{background:#f4f5f7;color:#0a0a0b}
+.lightmode .faq-sec .lead{color:#5c6170}
+.lightmode .faq-sec .kw{color:#B4532A}
+.lightmode .faq-chips-t,.lightmode .faq-prog-t{color:#5c6170}
+.lightmode .fq-chip{background:#ffffff;border-color:#d6d9df;color:#24262c}
+.lightmode .fq-chip:hover{background:#FFF7F1;border-color:#E8743B}
+.lightmode .fq-n{background:#f4f5f7;color:#B4532A}
+.lightmode .fq-chip.done{border-color:#e3e5ea}
+.lightmode .faq-bar{background:#e3e5ea}
+.lightmode .faq-reset{color:#B4532A}
+.lightmode .faq-chat{background:#ffffff;border-color:#e3e5ea;box-shadow:0 30px 70px rgba(10,10,11,0.10)}
+.lightmode .faq-top{background:#fafafa;border-bottom-color:#eceef0}
+.lightmode .faq-who{color:#0a0a0b}
+.lightmode .faq-who > span{color:#5c6170}
+.lightmode .fq-msg{background:#f0f1f3;color:#24262c}
+.lightmode .fq-msg.me{background:#E8743B;color:#0a0a0b}
+.lightmode .fq-msg.typing span{background:#8A8F99}
+.lightmode .fq-end{background:#FFF7F1;border-color:#F2A65A}
+/* Contacto: recuadro de presupuesto claro */
+.lightmode .ct-intro .ct-quote{background:#f4f5f7;color:#0a0a0b;box-shadow:0 0 0 1px #e3e5ea}
+.lightmode .ct-quote-t{color:#0a0a0b}
+.lightmode .ct-intro .ct-quote p{color:#5c6170}
+.lightmode .ct-data{border-top-color:#e3e5ea}
+.lightmode .ct-data-mail,.lightmode .ct-data-mail:hover{color:#0a0a0b}
+.lightmode .ct-data-addr{color:#5c6170}
+
+/* MÚSICA: botón con ecualizador */
+.mu-bars{display:inline-flex;align-items:flex-end;gap:2.5px;height:16px}
+.mu-bars i{display:block;width:3px;height:100%;border-radius:2px;background:#F2A65A;transform-origin:bottom;animation:muBar 900ms ease-in-out infinite}
+.mu-bars i:nth-child(2){animation-delay:-300ms}.mu-bars i:nth-child(3){animation-delay:-600ms}.mu-bars i:nth-child(4){animation-delay:-150ms}
+@keyframes muBar{0%,100%{transform:scaleY(0.3)}50%{transform:scaleY(1)}}
+.mu-btn[aria-pressed="true"]{border-color:#F2A65A;background:rgba(242,166,90,0.16)}
+@media (max-width: 900px){.mu-btn.m-only{margin-right:4px}}
+@media (prefers-reduced-motion: reduce){.mu-bars i{animation:none;transform:scaleY(0.7)}}
+
+@media (max-width: 900px){.mu-btn.m-only + .mode-btn.m-only{margin-left:0}}
+
+/* CÓMO TRABAJAMOS: equipo pequeño, sin intermediarios */
+.cw-team{margin-top:64px}
+.cw-big{margin:0;font-family:"Antonio","Bebas Neue",sans-serif;font-size:clamp(40px,4.4vw,68px);line-height:0.98;font-weight:600;color:#0a0a0b}
+.cw-big em{font-style:normal;color:#B4532A}
+
+.pq-team{margin-top:0;margin-bottom:72px}
 
 /* ── Añadidos a la web (fuera del diseño) ───────────────────────────── */
 /* Formulario: casilla de privacidad, campo trampa anti-spam y aviso de error */
@@ -1277,3 +1693,67 @@ html.has-cursor input:not([type="radio"]):not([type="checkbox"]),html.has-cursor
 .cursor.text{opacity:0}
 .cursor.down .cursor-ring{width:30px;height:30px;margin:-15px 0 0 -15px}
 @media (prefers-reduced-motion: reduce){.cursor-dot,.cursor-ring{transition:none}}
+
+/* ── Ajustes responsive (2026-11-23) ─────────────────────────────── */
+/* Menú: los enlaces nunca se parten en dos líneas */
+.topbar .nl,.topbar .btn{white-space:nowrap}
+.topbar.island .topbar-in{max-width:1220px}
+@media (max-width: 1360px){.topbar .navlinks{gap:24px}.topbar .nl{font-size:15px;letter-spacing:0.08em}}
+/* Por debajo de 1200 px ya no caben todos: se pasa al menú desplegable (como en móvil) */
+@media (max-width: 1200px){
+  .topbar .navlinks{display:none}
+  .topbar .menubtn{display:inline-flex}
+  .mode-btn.m-only{display:inline-flex;margin-left:auto;margin-right:8px}
+  .mu-btn.m-only{margin-right:4px}
+  .mu-btn.m-only + .mode-btn.m-only{margin-left:0}
+}
+/* Menú compacto: logo, música, modo y menú caben siempre en la píldora */
+@media (max-width: 1200px){
+  .topbar .nav{gap:8px}
+  .topbar .logo{flex:0 1 auto;min-width:0;margin-right:auto}
+  .topbar .menubtn{flex:none;width:44px;height:44px}
+  .mode-btn.m-only{margin:0}
+}
+@media (max-width: 560px){
+  .topbar-in,.topbar.island .topbar-in{padding:0 8px 0 14px}
+  .topbar .logo-full{height:32px !important}
+  .topbar .nav{gap:6px}
+  .mode-btn.m-only{width:40px;height:40px}
+}
+/* Cómo trabajamos en móvil: el globo queda de fondo suave y no tapa los pasos */
+@media (max-width: 900px){.globe{width:110vw;top:50%;opacity:0.18}}
+/* FAQ en móvil: primero las preguntas y debajo el chat, para ver la respuesta al tocar */
+@media (max-width: 900px){
+  .faq{grid-template-columns:minmax(0,1fr);grid-template-areas:"head" "chips" "chat"}
+  .faq-thread{height:360px}
+}
+/* Carrusel en móvil: las flechas van debajo de las tarjetas y no tapan el texto */
+@media (max-width: 640px){
+  .car-wrap{padding-bottom:64px}
+  .car-btn{top:auto;bottom:0;margin-top:0}
+  .car-btn.prev{left:auto;right:68px}
+  .car-btn.next{right:16px}
+}
+/* Pie: columnas que se reparten bien en tablet y móvil */
+@media (max-width: 1100px){
+  .ft-cols{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ft-brand{grid-column:1 / -1;border-right:0;padding-right:0;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.12)}
+}
+@media (max-width: 640px){
+  .ft-cols{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px 16px}
+  .ft-cols > .ft-col:last-child{grid-column:1 / -1}
+}
+/* Postal del formulario en móvil: más sitio para el nombre y el email */
+@media (max-width: 640px){
+  .pc .ct-row{grid-template-columns:50px minmax(0,1fr);gap:8px;font-size:13px}
+  .pc .ct-row span{font-size:10px;letter-spacing:0.08em}
+}
+/* Menú compacto en escritorio: "¿Conectamos?" siempre dentro de la píldora */
+@media (min-width: 1201px){
+  .topbar.island .topbar-in{max-width:min(1320px,calc(100vw - 32px))}
+  .topbar.island .navlinks{gap:20px}
+  .topbar .nav{min-width:0}
+}
+@media (min-width: 1201px) and (max-width: 1360px){.topbar.island .navlinks{gap:14px}.topbar.island .nl{letter-spacing:0.06em}}
+/* "Estar presentes…": no se desplaza con el scroll (solo se van encendiendo las palabras) */
+.svx-win-lead,.svx-win-lead .lw{transform:none !important}

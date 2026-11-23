@@ -1,16 +1,18 @@
-/* Marae Blue Studio — interacciones de la web (diseño v2, 2026-11-22) */
+/* Marae Blue Studio — interacciones de la web (diseño v2, 2026-11-23) */
 
 const CONFIG = {
-  // Webhook de n8n que recibe el formulario de contacto.
-  // OJO: la URL "webhook-test" solo funciona mientras n8n está en "Listen for test event".
-  // Para producción, cambia "/webhook-test/" por "/webhook/" y activa el workflow.
-  contactWebhook: 'https://danieltest.app.n8n.cloud/webhook-test/58aa7781-8727-4aaf-8c51-b2b4e94a3064'
+  // Webhook de PRODUCCIÓN de n8n que recibe el formulario de contacto.
+  // Solo recibe datos si el workflow está activo en n8n.
+  // Para pruebas, usa la URL con "/webhook-test/" y pon n8n en "Listen for test event".
+  contactWebhook: 'https://danieltest.app.n8n.cloud/webhook/58aa7781-8727-4aaf-8c51-b2b4e94a3064'
 };
 
 const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 document.addEventListener('DOMContentLoaded', () => {
+  initMode();
+  initMusic();
   initNav();
   initCarousel();
   initFaq();
@@ -22,6 +24,137 @@ document.addEventListener('DOMContentLoaded', () => {
   initCursor();
   initSmoothLinks();
 });
+
+/* Fotos preparadas en segundo plano: así el desplazamiento suave no se congela
+   la primera vez que una foto grande entra en pantalla. */
+window.addEventListener('load', () => {
+  const urls = new Set();
+  document.querySelectorAll('.ms img').forEach((img) => img.currentSrc && urls.add(img.currentSrc));
+  document.querySelectorAll('.svx-photo, .hero-bg, .ft-bg, .bc, .tide-top').forEach((el) => {
+    const m = /url\(["']?([^"')]+)["']?\)/.exec(getComputedStyle(el).backgroundImage);
+    if (m) urls.add(m[1]);
+  });
+  const list = Array.from(urls);
+  const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 200));
+  const next = () => {
+    const url = list.shift();
+    if (!url) return;
+    const im = new Image();
+    im.src = url;
+    (im.decode ? im.decode() : Promise.resolve()).catch(() => {}).then(() => idle(next));
+  };
+  idle(next);
+});
+
+/* Modo claro / oscuro: se recuerda en este navegador */
+function initMode() {
+  const root = document.querySelector('.ms');
+  const btns = document.querySelectorAll('[data-mode]');
+  let light = false;
+  try { light = localStorage.getItem('marae-mode') === 'light'; } catch (e) {}
+  const apply = () => {
+    root.classList.toggle('lightmode', light);
+    btns.forEach((b) => {
+      const label = light ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro';
+      b.setAttribute('aria-pressed', String(light));
+      b.setAttribute('aria-label', label);
+      b.title = label;
+      b.querySelector('[data-when="isDark"]').hidden = light;
+      b.querySelector('[data-when="light"]').hidden = !light;
+    });
+  };
+  btns.forEach((b) => b.addEventListener('click', () => {
+    light = !light;
+    try { localStorage.setItem('marae-mode', light ? 'light' : 'dark'); } catch (e) {}
+    apply();
+  }));
+  apply();
+}
+
+/* Música de fondo: ritmo suave generado en el navegador (Web Audio). Solo suena si la persona la activa. */
+function initMusic() {
+  const btns = document.querySelectorAll('[data-music]');
+  const AC = window.AudioContext || window.webkitAudioContext;
+  if (!AC) { btns.forEach((b) => { b.hidden = true; }); return; }
+  let mu = null, timer = 0;
+  const show = (on) => btns.forEach((b) => {
+    const label = on ? 'Pausar música' : 'Poner música';
+    b.setAttribute('aria-pressed', String(on));
+    b.setAttribute('aria-label', label);
+    b.title = label;
+    b.querySelector('[data-when="musicOff"]').hidden = on;
+    b.querySelector('[data-when="music"]').hidden = !on;
+  });
+  const start = () => {
+    const ctx = new AC();
+    const master = ctx.createGain();
+    master.gain.setValueAtTime(0, ctx.currentTime);
+    master.gain.linearRampToValueAtTime(0.6, ctx.currentTime + 3);
+    const warm = ctx.createBiquadFilter(); warm.type = 'lowpass'; warm.frequency.value = 4200;
+    master.connect(warm); warm.connect(ctx.destination);
+    // Eco suave para los acordes
+    const dl = ctx.createDelay(); dl.delayTime.value = 0.36;
+    const fb = ctx.createGain(); fb.gain.value = 0.3;
+    const wet = ctx.createGain(); wet.gain.value = 0.3;
+    dl.connect(fb); fb.connect(dl); dl.connect(wet); wet.connect(master);
+    // Ruido reutilizable para caja y platillos
+    const nbuf = ctx.createBuffer(1, ctx.sampleRate, ctx.sampleRate), nd = nbuf.getChannelData(0);
+    for (let i = 0; i < nd.length; i++) nd[i] = Math.random() * 2 - 1;
+    const step = 60 / 86 / 4;
+    const chords = [[174.61, 220, 261.63, 329.63], [164.81, 196, 246.94, 293.66], [146.83, 174.61, 220, 261.63], [130.81, 164.81, 196, 246.94]];
+    const roots = [87.31, 82.41, 73.42, 65.41];
+    const kick = (t) => {
+      const o = ctx.createOscillator(), g = ctx.createGain();
+      o.frequency.setValueAtTime(120, t); o.frequency.exponentialRampToValueAtTime(45, t + 0.18);
+      g.gain.setValueAtTime(0.5, t); g.gain.exponentialRampToValueAtTime(0.001, t + 0.32);
+      o.connect(g); g.connect(master); o.start(t); o.stop(t + 0.34);
+    };
+    const hit = (t, type, freq, vol, dur) => {
+      const n = ctx.createBufferSource(); n.buffer = nbuf;
+      const f = ctx.createBiquadFilter(); f.type = type; f.frequency.value = freq;
+      const g = ctx.createGain(); g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(0.001, t + dur);
+      n.connect(f); f.connect(g); g.connect(master); n.start(t, Math.random() * 0.5); n.stop(t + dur + 0.02);
+    };
+    const bass = (t, f, dur) => {
+      const o = ctx.createOscillator(), g = ctx.createGain(); o.type = 'triangle'; o.frequency.value = f;
+      g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.22, t + 0.02); g.gain.exponentialRampToValueAtTime(0.001, t + dur);
+      o.connect(g); g.connect(master); o.start(t); o.stop(t + dur + 0.05);
+    };
+    const keys = (t, ch, dur, vol) => ch.forEach((f, k) => {
+      const o = ctx.createOscillator(), g = ctx.createGain(); o.type = k % 2 ? 'triangle' : 'sine'; o.frequency.value = f * 2; o.detune.value = (k - 1.5) * 5;
+      g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(vol, t + 0.03); g.gain.exponentialRampToValueAtTime(0.001, t + dur);
+      o.connect(g); g.connect(master); g.connect(dl); o.start(t); o.stop(t + dur + 0.05);
+    });
+    let n = 0, next = ctx.currentTime + 0.15;
+    const sched = (st, t) => {
+      const bar = Math.floor(st / 16) % 4, s16 = st % 16, tt = t + ((s16 % 2) ? step * 0.18 : 0);
+      if (s16 === 0 || s16 === 10) kick(tt);
+      if (s16 === 7 && bar % 2) kick(tt);
+      if (s16 === 4 || s16 === 12) hit(tt, 'bandpass', 1800, 0.16, 0.16);
+      if (s16 % 2 === 0) hit(tt, 'highpass', 7000, s16 % 4 ? 0.05 : 0.08, 0.05);
+      if (s16 === 0) { keys(tt, chords[bar], step * 14, 0.035); bass(tt, roots[bar], step * 5); }
+      if (s16 === 6) bass(tt, roots[bar] * 1.5, step * 2);
+      if (s16 === 10) { bass(tt, roots[bar], step * 4); keys(tt, chords[bar].slice(1), step * 4, 0.02); }
+      if (s16 === 14) bass(tt, roots[bar] * 2, step * 2);
+    };
+    timer = setInterval(() => { while (next < ctx.currentTime + 0.15) { sched(n, next); n++; next += step; } }, 25);
+    mu = { ctx, master };
+  };
+  const stop = () => {
+    clearInterval(timer);
+    const m = mu; mu = null;
+    if (!m) return;
+    try {
+      m.master.gain.cancelScheduledValues(m.ctx.currentTime);
+      m.master.gain.setValueAtTime(m.master.gain.value, m.ctx.currentTime);
+      m.master.gain.linearRampToValueAtTime(0, m.ctx.currentTime + 1.2);
+      setTimeout(() => { try { m.ctx.close(); } catch (e) {} }, 1400);
+    } catch (e) {}
+  };
+  btns.forEach((b) => b.addEventListener('click', () => {
+    if (mu) { stop(); show(false); } else { start(); show(true); }
+  }));
+}
 
 /* Menú: desplegable de servicios (escritorio) y menú móvil */
 function initNav() {
@@ -54,7 +187,7 @@ function initNav() {
     if (svcMenu && !svcMenu.hidden) { setSvc(false); svcBtn.focus(); }
     if (menu && !menu.hidden) { setMenu(false); menuBtn.focus(); }
   });
-  window.matchMedia('(min-width: 901px)').addEventListener('change', (m) => { if (m.matches) setMenu(false); });
+  window.matchMedia('(min-width: 1201px)').addEventListener('change', (m) => { if (m.matches) setMenu(false); });
 }
 
 /* Carrusel "Lo que nos define": flechas */
@@ -72,11 +205,12 @@ function initCarousel() {
 const FAQ = [
   { q: '¿Por dónde empezamos si no sé qué necesito?', a: 'Por una conversación. Nos cuentas tu negocio y tu idea, y te decimos con honestidad qué te conviene y qué no. Sin compromiso.' },
   { q: '¿Cuánto cuesta trabajar con vosotros?', a: 'Depende de lo que necesites, por eso no tenemos tarifas cerradas. Antes de empezar te preparamos un presupuesto a medida, por escrito y sin letra pequeña.' },
-  { q: '¿Cuándo voy a ver resultados?', a: 'Depende del servicio: unas acciones se notan antes que otras. Lo que sí hacemos siempre es fijar objetivos y fechas desde el principio, y enseñarte cómo avanza todo con informes claros.' },
+  { q: '¿Ofrecéis servicios personalizados o paquetes cerrados?', a: 'Personalizados. Cada negocio es distinto, así que preparamos un plan a medida según tus objetivos y tu presupuesto. Puedes empezar por un servicio concreto o combinar varios.' },
+  { q: '¿Cuándo voy a ver resultados?', a: 'Depende del servicio: unas acciones se notan antes que otras. Lo que sí hacemos siempre es fijar objetivos y fechas desde el principio y enseñarte cómo avanza todo con informes claros.' },
   { q: '¿Lo hacéis todo o solo una parte?', a: 'Lo que necesites. Web, publicidad, SEO, redes, estrategia y email marketing: puedes empezar por un servicio o dejarlo todo en nuestras manos. Siempre con el mismo equipo.' },
   { q: '¿Con quién voy a hablar?', a: 'Con personas reales que conocen tu proyecto. Siempre sabrás en qué punto está y quién se encarga de él.' },
-  { q: '¿Trabajáis con negocios que están empezando?', a: '¡Claro! Emprender es un momento de cambio, y también puede ser divertido. Te acompañamos desde la primera idea.' },
-  { q: '¿Cuánto tardáis en responder?', a: 'Contestamos cada mensaje en menos de [00] horas laborables. Es uno de nuestros compromisos.' }
+  { q: '¿Trabajáis con negocios que están empezando?', a: '¡Claro! Emprender es un momento de cambio y también puede ser divertido. Te acompañamos desde la primera idea.' },
+  { q: '¿Cuánto tardáis en responder?', a: 'Contestamos cada mensaje en menos de 24 horas laborables. Es uno de nuestros compromisos.' }
 ];
 function initFaq() {
   const list = document.querySelector('.faq-chip-list');
@@ -126,7 +260,7 @@ function initFaq() {
 }
 
 /* Formulario de contacto: postal en directo y envío al webhook de n8n */
-const CT_OPTIONS = ['Estrategia de marca', 'Contenido y redes', 'Publicidad online', 'Web', 'SEO', 'Email marketing', 'Aún no lo sé'];
+const CT_OPTIONS = ['Diseño web', 'Publicidad digital', 'Posicionamiento SEO', 'Social Media', 'Estrategia digital', 'Email marketing', 'Aún no lo sé'];
 function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
@@ -136,19 +270,15 @@ function initContactForm() {
   const chips = form.querySelector('.ct-chips');
   const tags = box.querySelector('.ct-tags');
   const error = form.querySelector('[data-ct-error]');
-  const send = form.querySelector('.ct-send');
+  const send = form.querySelector('.cf-send');
   const pv = (k) => box.querySelector(`[data-pv="${k}"]`);
   const val = (n) => form.elements[n].value.trim();
   let picked = [];
 
-  chips.innerHTML = CT_OPTIONS.map((o) => `<button class="ct-chip" type="button" aria-pressed="false" data-opt="${esc(o)}"><span class="ct-plus" aria-hidden="true"></span>${esc(o)}</button>`).join('');
+  chips.innerHTML = CT_OPTIONS.map((o) => `<button class="ct-chip" type="button" aria-pressed="false" data-opt="${esc(o)}">${esc(o)}</button>`).join('');
 
   const update = () => {
     const nm = val('name'), bz = val('company'), ml = val('email'), msg = val('message');
-    const filled = [nm, bz, msg, ml].filter(Boolean).length + (picked.length ? 1 : 0);
-    const pct = Math.round(filled / 5 * 100);
-    form.querySelector('[data-ct-bar]').style.width = pct + '%';
-    form.querySelector('[data-ct-meter]').textContent = pct === 0 ? 'Empieza por tu nombre' : pct < 60 ? 'Vas muy bien' : pct < 100 ? 'Ya casi está' : 'Listo para enviar';
     pv('name').textContent = nm || 'Tu nombre'; pv('name').className = nm ? '' : 'ph';
     pv('mail').textContent = ml || 'tu@email.com'; pv('mail').className = ml ? '' : 'ph';
     pv('subject').textContent = bz ? 'Nueva idea: ' + bz : 'Una nueva idea';
@@ -237,11 +367,25 @@ function initParallax() {
   const bar = document.querySelector('.topbar');
   const heroIn = document.querySelector('.hero-card .hc-center');
   const mainEl = document.querySelector('main');
+  const lwEls = Array.from(document.querySelectorAll('[data-lw]')).filter((el) => !el.closest('.seafoot'));
+  let pending = Array.from(document.querySelectorAll('.rv, .rvl, .rvt, .rvw, .rvc'));
   let raf = 0;
   const tick = () => {
     raf = 0;
     const vh = window.innerHeight;
     const active = vh < 1800 && !rm;
+    // Por si el observador no llega a tiempo (saltos largos): lo que ya está en pantalla se muestra
+    if (pending.length) pending = pending.filter((el) => {
+      if (el.classList.contains('in')) return false;
+      if (vh >= 1800 || el.getBoundingClientRect().top < vh * 0.96) { el.classList.add('in'); return false; }
+      return true;
+    });
+    // Frases que se encienden palabra a palabra según el scroll
+    lwEls.forEach((el) => {
+      if (!active) { el.style.setProperty('--p', '1'); return; }
+      const top = el.getBoundingClientRect().top;
+      el.style.setProperty('--p', Math.min(1, Math.max(0, (vh * 0.92 - top) / (vh * 0.5))).toFixed(3));
+    });
     if (frame) {
       const top = frame.getBoundingClientRect().top;
       const hp = Math.min(1, Math.max(0, -top / 220));
@@ -269,6 +413,8 @@ function initParallax() {
       const p = active ? Math.min(1, Math.max(0, (vh - mb) / Math.min(r.height, vh))) : 1;
       const e = 1 - Math.pow(1 - p, 2);
       foot.style.setProperty('--fp', e.toFixed(3));
+      const ftP = active ? Math.min(1, Math.max(0, (p - 0.35) / 0.55)).toFixed(3) : '1';
+      foot.querySelectorAll('[data-lw]').forEach((el) => el.style.setProperty('--p', ftP));
       depthEls.forEach((el) => { el.style.transform = `translate3d(0,${((1 - e) * parseFloat(el.dataset.depth)).toFixed(1)}px,0)`; });
     }
   };
@@ -276,6 +422,7 @@ function initParallax() {
   window.addEventListener('scroll', queue, { passive: true });
   window.addEventListener('resize', queue);
   tick();
+  setTimeout(tick, 1200);
 }
 
 /* Tarjeta "Resultados": gráfica animada con tooltip.
@@ -416,10 +563,10 @@ function initCursor() {
 }
 
 /* Enlaces internos (#seccion): desplazamiento lento y suave en vez de salto.
-   La duración depende de la distancia (entre 1,1 y 2,4 s) y frena al llegar. */
+   La duración depende de la distancia (entre 1,1 y 3,4 s) y frena al llegar. */
 function initSmoothLinks() {
   const still = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2); // easeInOutCubic
+  const ease = (t) => -(Math.cos(Math.PI * t) - 1) / 2; // easeInOutSine: arranca y frena suave, sin acelerones
   let anim = null;
 
   const stop = () => { if (anim) { cancelAnimationFrame(anim); anim = null; } };
@@ -439,7 +586,7 @@ function initSmoothLinks() {
     const to = targetY(el);
     const dist = to - from;
     if (still.matches || Math.abs(dist) < 2) { window.scrollTo({ top: to, behavior: 'instant' }); return; }
-    const duration = Math.min(2400, Math.max(1100, 700 + Math.abs(dist) * 0.25));
+    const duration = Math.min(3400, Math.max(1100, 800 + Math.abs(dist) * 0.32));
     const start = performance.now();
     const step = (now) => {
       const t = Math.min(1, (now - start) / duration);

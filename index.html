@@ -17,9 +17,9 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@200;300;400&family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/css/styles.css?v=20261122-1">
-<script src="assets/js/main.js?v=20261122-1" defer></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@200;300;400;600;700&family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css?v=20261123-7">
+<script src="assets/js/main.js?v=20261123-7" defer></script>
 </head>
 <body>
 <div class="ms" id="top">
@@ -28,7 +28,7 @@
 <div class="topbar on-dark">
   <div class="topbar-in">
     <nav class="nav" aria-label="Principal">
-      <a class="logo" href="#inicio" aria-label="Marae blue studio — inicio"><img class="logo-full" src="assets/img/logo-marae-blue.svg" alt="Marae blue studio" style="display: block; height: 48px; width: auto"></a>
+      <a class="logo" href="#inicio" aria-label="Marae blue Studio — inicio"><img decoding="async" class="logo-full" src="assets/img/logo-marae-blue.svg" alt="Marae blue Studio" style="display: block; height: 48px; width: auto"></a>
       <div class="navlinks">
         <div class="nl-dd">
           <button class="nl nl-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="svc-dd" data-svc-toggle>Servicios<svg class="nl-chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
@@ -38,22 +38,28 @@
             </div>
         </div>
         <a class="nl" href="#porque">Por qué Marae</a>
-        <a class="nl" href="#nosotros">Nosotros</a>
+        <a class="nl" href="#nosotros">Cómo trabajamos</a>
+        <a class="nl" href="#faq" aria-label="Preguntas frecuentes">FAQ</a>
         <a class="nl" href="#contacto">Contacto</a>
+        <button class="mode-btn mu-btn" type="button" aria-pressed="false" aria-label="Poner música" title="Poner música" data-music><span class="sw" data-when="musicOff"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="17" cy="16" r="3"></circle></svg></span><span class="sw" data-when="music" hidden><span class="mu-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span></button>
+        <button class="mode-btn" type="button" aria-pressed="false" aria-label="Cambiar a modo claro" title="Cambiar a modo claro" data-mode><span class="sw" data-when="isDark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span><span class="sw" data-when="light" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg></span></button>
         <a class="btn btn-studio" href="#contacto">¿Conectamos?
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
         </a>
       </div>
+      <button class="mode-btn mu-btn m-only" type="button" aria-pressed="false" aria-label="Poner música" title="Poner música" data-music><span class="sw" data-when="musicOff"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="17" cy="16" r="3"></circle></svg></span><span class="sw" data-when="music" hidden><span class="mu-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span></button>
+      <button class="mode-btn m-only" type="button" aria-pressed="false" aria-label="Cambiar a modo claro" title="Cambiar a modo claro" data-mode><span class="sw" data-when="isDark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span><span class="sw" data-when="light" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg></span></button>
       <button class="menubtn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobilemenu" data-menu-toggle>
-        <svg data-icon-close hidden width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg>
-          <svg data-icon-open width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16"></path><path d="M4 16h16"></path></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" data-icon-close hidden><path d="M6 6l12 12"></path><path d="M18 6L6 18"></path></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" data-icon-open><path d="M4 8h16"></path><path d="M4 16h16"></path></svg>
       </button>
     </nav>
     <div class="mobilemenu" id="mobilemenu" hidden>
         <a href="#servicios">Servicios</a>
         <div class="mm-sub"><a href="#s-web"><i>01</i>Diseño web</a><a href="#s-ads"><i>02</i>Publicidad digital</a><a href="#s-seo"><i>03</i>Posicionamiento SEO</a><a href="#s-social"><i>04</i>Social Media</a><a href="#s-estrategia"><i>05</i>Estrategia digital</a><a href="#s-email"><i>06</i>Email marketing</a></div>
         <a href="#porque">Por qué Marae</a>
-        <a href="#nosotros">Nosotros</a>
+        <a href="#nosotros">Cómo trabajamos</a>
+        <a href="#faq">Preguntas frecuentes</a>
         <a href="#contacto">Contacto</a>
       </div>
   </div>
@@ -65,7 +71,7 @@
   <div class="hero-shade" aria-hidden="true"></div>
 
   <div class="hc-center">
-    <h1 class="sr-only">Marae Blue, agencia de marketing digital</h1>
+    <h1 class="sr-only">Marae blue Studio, agencia de marketing digital</h1>
     <div class="hc-lockup" aria-hidden="true">
       <div class="hc-row"><span class="hc-ch"><span style="animation-delay: 150ms">M</span></span><span class="hc-ch"><span style="animation-delay: 230ms">A</span></span><span class="hc-ch"><span style="animation-delay: 310ms">R</span></span><span class="hc-ch"><span style="animation-delay: 390ms">A</span></span><span class="hc-ch"><span style="animation-delay: 470ms">E</span></span><span class="hc-dot"></span></div>
       <div class="hc-mid"><span>Agencia de marketing digital</span></div>
@@ -87,16 +93,16 @@
     <div class="sechead">
       <div style="display: flex; flex-direction: column; gap: 20px">
         <span class="label rvt" style="color: #F2A65A">01 — Servicios</span>
-        <h2 class="h-sec disp"><span class="line rvl"><span><span style="color: #E8743B">Todo está conectado.</span></span></span><span class="line rvl dl1"><span>Como en la naturaleza.</span></span></h2>
+        <h2 class="h-sec lw-h" data-lw="1" style="--n: 7"><span style="color: #E8743B"><span class="lw" style="--i: 0">Todo</span> <span class="lw" style="--i: 1">está</span> <span class="lw" style="--i: 2">conectado.</span></span> <br><span class="lw" style="--i: 3">Como</span> <span class="lw" style="--i: 4">en</span> <span class="lw" style="--i: 5">la</span> <span class="lw" style="--i: 6">naturaleza.</span></h2>
       </div>
     </div>
     <div class="svx-win rv">
       <div class="svx-win-body">
-        <div class="svx-win-l"><span class="svx-node" aria-hidden="true"></span><p class="svx-win-lead">Estar presentes es el primer paso para crear conexiones, abrir oportunidades, <em>llegar más lejos y a más gente</em>.</p></div>
+        <div class="svx-win-l"><span class="svx-node" aria-hidden="true"></span><p class="svx-win-lead" data-lw="1" aria-label="Estar presentes es el primer paso para crear conexiones, abrir oportunidades, llegar más lejos y a más gente." style="--n: 18"><span class="lw" style="--i: 0">Estar</span> <span class="lw" style="--i: 1">presentes</span> <span class="lw" style="--i: 2">es</span> <span class="lw" style="--i: 3">el</span> <span class="lw" style="--i: 4">primer</span> <span class="lw" style="--i: 5">paso</span> <span class="lw" style="--i: 6">para</span> <span class="lw" style="--i: 7">crear</span> <span class="lw" style="--i: 8">conexiones,</span> <span class="lw" style="--i: 9">abrir</span> <span class="lw" style="--i: 10">oportunidades,</span> <em><span class="lw" style="--i: 11">llegar</span> <span class="lw" style="--i: 12">más</span> <span class="lw" style="--i: 13">lejos</span> <span class="lw" style="--i: 14">y</span> <span class="lw" style="--i: 15">a</span> <span class="lw" style="--i: 16">más</span> <span class="lw" style="--i: 17">gente.</span></em></p></div>
         <div class="svx-win-txt">
-          <p>Sabemos lo que supone sacar adelante una empresa, un proyecto o una idea de negocio. Las decisiones, las responsabilidades, el tiempo que nunca parece suficiente y todas esas tareas que terminan dependiendo de ti.</p>
+          <p>Sabemos lo que supone sacar adelante una empresa, un proyecto o una idea de negocio. Las decisiones, las responsabilidades, el tiempo que nunca parece suficiente y todas esas tareas que terminan dependiendo de ti y se hacen cuesta arriba. Por eso queremos estar a tu lado y ser ese apoyo que te permita avanzar con estrategia.</p>
           <p>Queremos ayudarte a liberar tiempo y dar impulso a todo aquello que hace crecer tu negocio.</p>
-          <p class="svx-win-close">Queremos estar a tu lado.</p>
+          <p class="svx-win-close">Si tú creces, nosotros crecemos contigo.</p>
         </div>
       </div>
     </div>
@@ -134,7 +140,7 @@
         </div>
       </div>
       <div id="s-estrategia" class="svx-row rv">
-        <div class="svx-media"><div class="svx-photo" role="img" aria-label="Río entre bosques visto desde el aire" style="background-image: url(assets/img/svc-rio.jpg); background-position: 50% 50%"></div></div>
+        <div class="svx-media"><div class="svx-photo" role="img" aria-label="Río serpenteando entre árboles visto desde el aire, en blanco y negro" style="background-image: url(assets/img/svc-rio.jpg); background-position: 50% 52%"></div></div>
         <div class="svx-main">
           <div class="svx-head"><span class="svx-n">05</span>
           <h3 class="svx-title"><span class="line rvl"><span>Estrategia digital</span></span></h3></div>
@@ -152,7 +158,7 @@
     </div>
     <div class="tailor svx-tailor rv">
       <p>¿No sabes por dónde empezar? Estamos aquí para ayudarte a dar <em class="hl hl-dark">el primer paso</em>.</p>
-      <a class="btn btn-studio" href="#contacto">¿Hablamos?
+      <a class="btn btn-studio" href="#contacto">¿Conectamos?
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
       </a>
     </div>
@@ -165,13 +171,34 @@
     <div class="sechead">
       <div style="display: flex; flex-direction: column; gap: 20px">
         <span class="label kw rvt">02 — Por qué Marae blue</span>
-        <h2 class="h-sec disp"><span class="line rvl"><span>Todo gran proyecto comienza con una buena idea.</span></span></h2>
+        <h2 class="h-sec lw-h" data-lw="1" style="--n: 8"><span class="lw" style="--i: 0">Todo</span> <span class="lw" style="--i: 1">gran</span> <span class="lw" style="--i: 2">proyecto</span> <span class="lw" style="--i: 3">comienza</span> <span class="lw" style="--i: 4">con</span> <span class="lw" style="--i: 5">una</span> <span class="lw" style="--i: 6">buena</span> <span class="lw" style="--i: 7">idea.</span></h2>
       </div>
-      <div class="lead rv dl2" style="display: flex; flex-direction: column; gap: 14px; max-width: 48ch">
-        <p style="margin: 0">En Marae blue Studio <em class="hl">damos vida a tu negocio</em> y lo ayudamos a posicionarse, <em class="hl">darse a conocer como se merece</em>. Creamos, diseñamos y hacemos que las cosas sucedan.</p>
-        <p style="margin: 0; font-style: italic">“No queremos ser la agencia que simplemente lleve tus redes o diseñe tu web. <em class="hl" style="font-style: italic">Queremos ser ese equipo que se implica</em>, que te escucha, que entiende lo que necesita tu negocio y que busca contigo nuevas formas de crecer.”</p>
+
+    </div>
+    <div class="pq-win">
+      <div class="pq-body">
+        <div class="pq-l"><span class="svx-node" aria-hidden="true"></span><p class="pq-lead" data-lw="1" style="--n: 22" aria-label="En Marae blue Studio damos vida a tu negocio y lo ayudamos a posicionarse y a darse a conocer como se merece."><span class="lw" style="--i: 0">En</span> <span class="lw" style="--i: 1">Marae</span> <span class="lw" style="--i: 2">blue</span> <span class="lw" style="--i: 3">Studio</span> <em><span class="lw" style="--i: 4">damos</span> <span class="lw" style="--i: 5">vida</span> <span class="lw" style="--i: 6">a</span> <span class="lw" style="--i: 7">tu</span> <span class="lw" style="--i: 8">negocio</span></em> <span class="lw" style="--i: 9">y</span> <span class="lw" style="--i: 10">lo</span> <span class="lw" style="--i: 11">ayudamos</span> <span class="lw" style="--i: 12">a</span> <span class="lw" style="--i: 13">posicionarse</span> <span class="lw" style="--i: 14">y</span> <span class="lw" style="--i: 15">a</span> <em><span class="lw" style="--i: 16">darse</span> <span class="lw" style="--i: 17">a</span> <span class="lw" style="--i: 18">conocer</span> <span class="lw" style="--i: 19">como</span> <span class="lw" style="--i: 20">se</span> <span class="lw" style="--i: 21">merece.</span></em></p></div>
+        <div class="pq-txt">
+          <p>Entendemos que no todos somos iguales y que cada negocio tiene sus propios retos. No tenemos las mismas necesidades ni la misma forma de crecer.</p>
+          <p>Por eso <em class="hl">nos implicamos</em>, dedicando tiempo a conocer tu negocio y a quién va dirigido.</p>
+          <p class="pq-close">Nos mueve desarrollar nuevas ideas para que tú tengas éxito y nosotros, junto a ti.</p>
+        </div>
       </div>
     </div>
+  </div>
+  <div class="wrap">
+    <div class="cw-win cw-team pq-team">
+      <div class="cw-l">
+        <h3 class="cw-t">Un equipo pequeño, sin intermediarios</h3>
+        <p class="cw-big">Trabajamos <em>siendo uno.</em></p>
+      </div>
+      <div class="cw-txt">
+        <p>Somos un equipo pequeño con muchas ganas de demostrar todo lo que sabemos. No subcontratamos ni pasamos tu proyecto a terceros: <em class="hl">todo lo hacemos nosotros mismos</em>.</p>
+        <p>Así hablas directamente con quien trabaja en tu proyecto y ninguna información se pierde por el camino.</p>
+        <ul class="cw-steps" aria-label="Cómo es nuestro equipo"><li><span>01</span>Equipo propio</li><li><span>02</span>Sin intermediarios</li><li><span>03</span>Trato directo</li></ul>
+      </div>
+    </div>
+    <h3 class="pq-sub rv">Nos diferencia</h3>
   </div>
   <div class="car-wrap">
     <button class="car-btn prev" type="button" aria-label="Anterior" data-car="-1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg></button>
@@ -183,25 +210,25 @@
           <span class="label">Cercanía</span>
           <h3 class="disp">Trato humano, siempre.</h3>
           <p>Personas reales que conocen tu proyecto y te responden cuando lo necesitas.</p>
-          <div class="bc-vis sens-photo"><img src="assets/img/cercania-chat.jpg" alt="Conversación de chat: un cliente pregunta si podemos ayudarle con sus redes y Marae blue Studio responde que sí, junto a una taza con el sello de la marca" style="display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 10px"></div>
+          <div class="bc-vis sens-photo"><img decoding="async" src="assets/img/cercania-chat.jpg" alt="Conversación de chat: un cliente pregunta si podemos ayudarle con sus redes y Marae blue Studio responde que sí, junto a una taza con el sello de la marca" style="display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 10px"></div>
         </div>
         <div class="bc car-card">
           <span class="label">Sensibilidad</span>
           <h3 class="disp">Primero escuchamos.</h3>
           <p>Nos gusta conocerte, escuchar tus ideas y comprender qué necesitas realmente.</p>
           <p style="font-style: italic; color: #24262c">“Creemos que las mejores estrategias empiezan con una buena conversación.”</p>
-          <div class="bc-vis sens-photo"><img src="assets/img/sensibilidad-conversacion.jpg" alt="Dos personas conversando y riendo alrededor de una mesa con unos papeles" style="display: block; width: 100%; height: 190px; object-fit: cover; object-position: 50% 40%; border-radius: 10px"></div>
+          <div class="bc-vis sens-photo"><img decoding="async" src="assets/img/sensibilidad-conversacion.jpg" alt="Dos personas conversando y riendo alrededor de una mesa con unos papeles" style="display: block; width: 100%; height: 190px; object-fit: cover; object-position: 50% 40%; border-radius: 10px"></div>
         </div>
         <div class="bc car-card">
           <span class="label">Estrategia</span>
           <h3 class="disp">Método y rigor.</h3>
           <p>Estrategia, creatividad y datos trabajando juntos, con procesos claros y revisiones periódicas.</p>
-          <div class="bc-vis sens-photo"><img src="assets/img/estrategia-tablero.jpg" alt="Tablero de corcho con muestras de color naranja, notas y fotos de inspiración para una estrategia de marketing" style="display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 10px"></div>
+          <div class="bc-vis sens-photo"><img decoding="async" src="assets/img/branding.jpg" alt="Hoja con la palabra Branding en naranja y flechas hacia identidad, logo, diseño, estrategia y marketing" style="display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 10px"></div>
         </div>
         <div class="bc car-card">
           <span class="label">Resultados</span>
           <h3 class="disp">Todo, a la vista.</h3>
-          <p>Informes claros: qué hacemos, cuánto cuesta y qué resultado da.</p>
+          <p>Informes claros para que tú lo entiendas: qué hacemos, cuánto cuesta y qué resultado da, sin filtros.</p>
           <div class="bc-vis metric" aria-hidden="true"><span class="mt-up">+<b class="mt-pct">0</b>%</span>
             <div class="mt-head"><span class="mt-chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16l6-6 4 4 6-8"></path><path d="M14 6h6v6"></path></svg>Crecimiento</span><span class="mt-legend"><i></i>Visitas<i class="b"></i>Conversiones</span></div>
             <svg viewBox="0 0 390 162" width="100%" height="162">
@@ -225,19 +252,25 @@
       <div class="bc span2 blue rv dl1">
         <span class="label">Una extensión de tu empresa</span>
         <h3 class="disp">Tu equipo y el nuestro, un solo equipo.</h3>
-        <div class="bc-vis merge" aria-hidden="true">
+        <div class="bc-vis merge chart" aria-hidden="true">
           <svg viewBox="0 0 640 190" width="100%" height="190" preserveAspectRatio="xMidYMid meet">
-            <text class="mg-lbl" x="0" y="28">Tu equipo</text>
-            <text class="mg-lbl mg-lbl-o" x="0" y="182">Marae blue</text>
-            <path class="mg-a" d="M0,46 C150,46 210,100 350,100"></path>
-            <path class="mg-b" d="M0,154 C150,154 210,100 350,100"></path>
-            <path class="mg-a mg-flow" d="M0,46 C150,46 210,100 350,100"></path>
-            <path class="mg-b mg-flow" d="M0,154 C150,154 210,100 350,100"></path>
-            <path class="mg-one" d="M350,100 L600,100"></path>
-            <path class="mg-one mg-flow2" d="M350,100 L600,100"></path>
+            <g class="ch-grid"><line x1="40" y1="0" x2="40" y2="190"></line><line x1="100" y1="0" x2="100" y2="190"></line><line x1="160" y1="0" x2="160" y2="190"></line><line x1="220" y1="0" x2="220" y2="190"></line><line x1="280" y1="0" x2="280" y2="190"></line><line x1="340" y1="0" x2="340" y2="190"></line><line x1="400" y1="0" x2="400" y2="190"></line><line x1="460" y1="0" x2="460" y2="190"></line><line x1="520" y1="0" x2="520" y2="190"></line><line x1="580" y1="0" x2="580" y2="190"></line><line x1="0" y1="25" x2="640" y2="25"></line><line x1="0" y1="65" x2="640" y2="65"></line><line x1="0" y1="105" x2="640" y2="105"></line><line x1="0" y1="145" x2="640" y2="145"></line><line x1="0" y1="185" x2="640" y2="185"></line></g>
+            <rect class="ch-frame" x="2" y="2" width="636" height="186" rx="10"></rect>
+            <g class="ch-waves"><path d="M110,100 q5,-4 10,0 t10,0"></path><path d="M180,30 q5,-4 10,0 t10,0"></path><path d="M430,150 q5,-4 10,0 t10,0"></path><path d="M470,40 q5,-4 10,0 t10,0"></path><path d="M270,170 q5,-4 10,0 t10,0"></path><path d="M540,160 q5,-4 10,0 t10,0"></path><path d="M80,180 q5,-4 10,0 t10,0"></path></g>
+            <g class="ch-rose" transform="translate(596 42)"><circle r="20"></circle><circle r="13"></circle><path class="ch-rose-n" d="M0,-24 L4,0 L0,4 L-4,0 Z"></path><path d="M0,24 L4,0 L0,-4 L-4,0 Z"></path><path d="M-24,0 L0,-3 L4,0 L0,3 Z"></path><path d="M24,0 L0,-3 L-4,0 L0,3 Z"></path><text y="-28" text-anchor="middle">N</text></g>
+            <text class="ch-coord" x="632" y="182" text-anchor="end">Hoja de ruta · Marae blue</text>
+            <path class="ch-route ch-a" d="M24,46 C140,40 200,64 250,82 S320,100 350,100"></path>
+            <path class="ch-route ch-b" d="M24,154 C140,160 200,136 250,118 S320,100 350,100"></path>
+            <path class="ch-route ch-one" d="M350,100 C420,100 470,88 520,96 S580,104 600,100"></path>
+            <g class="ch-port"><circle cx="24" cy="46" r="5"></circle><circle class="ch-port-o" cx="24" cy="154" r="5"></circle></g>
+            <text class="mg-lbl" x="14" y="28">Tu equipo</text>
+            <text class="mg-lbl mg-lbl-o" x="14" y="182">Marae blue</text>
+            <g transform="translate(196 58) rotate(14)"><g class="ch-boat ch-boat-a" style="animation-delay: 0s"><path d="M-8,2 L8,2 L5,6 L-5,6 Z"></path><path d="M0,1 L0,-11 L7,0 Z"></path></g></g>
+            <g transform="translate(196 141) rotate(-14)"><g class="ch-boat ch-boat-b" style="animation-delay: 0.6s"><path d="M-8,2 L8,2 L5,6 L-5,6 Z"></path><path d="M0,1 L0,-11 L7,0 Z"></path></g></g>
+            <g transform="translate(470 92) rotate(-4)"><g class="ch-boat ch-boat-one" style="animation-delay: 1.2s"><path d="M-8,2 L8,2 L5,6 L-5,6 Z"></path><path d="M0,1 L0,-11 L7,0 Z"></path></g></g>
             <circle class="mg-ring" cx="614" cy="100" r="12"></circle>
-            <circle class="mg-dot" cx="614" cy="100" r="8"></circle>
-            <text class="mg-lbl mg-lbl-w" x="630" y="76" text-anchor="end">Un solo equipo</text>
+            <path class="ch-x" d="M606,92 L622,108 M622,92 L606,108"></path>
+            <text class="mg-lbl mg-lbl-w" x="630" y="128" text-anchor="end">Un solo equipo</text>
           </svg>
         </div>
       </div>
@@ -252,7 +285,7 @@
 
 <!-- ESTRATEGIA DE MARCA (foto mesa) -->
 <section class="mesa-band" aria-label="Estrategia de marca">
-  <img class="mesa-img" src="assets/img/mesa-equipo.jpg" alt="Vista cenital de una mesa con portátiles, móviles y manos trabajando juntas">
+  <img decoding="async" class="mesa-img" src="assets/img/mesa-equipo.jpg" alt="Vista cenital de una mesa con portátiles, móviles y manos trabajando juntas">
 </section>
 
 <!-- CÓMO TRABAJAMOS (antes Quiénes somos) -->
@@ -262,12 +295,13 @@
     <div class="sechead">
       <div style="display: flex; flex-direction: column; gap: 20px">
         <span class="label kw rvt">03 — Cómo trabajamos</span>
-        <h2 class="h-sec disp"><span class="line rvl"><span>Paso a paso, contigo.</span></span></h2>
+        <h2 class="h-sec lw-h" data-lw="1" style="--n: 4"><span class="lw" style="--i: 0">Paso</span> <span class="lw" style="--i: 1">a</span> <span class="lw" style="--i: 2">paso,</span> <span class="lw" style="--i: 3">contigo.</span></h2>
       </div>
-      <p class="lead rv dl2">Sabes en qué punto está tu proyecto <em class="hl">en cada momento</em>, y quién se encarga de él.</p>
+      <p class="lead rv dl2">Sabes en qué punto está tu proyecto <em class="hl">en cada momento</em> y quién se encarga de él.</p>
     </div>
     <div class="method rv">
-      <svg class="mnet-m" aria-hidden="true"></svg><div class="mnet-wrap" aria-hidden="true"><svg class="mnet" viewBox="0 0 1000 310" preserveAspectRatio="none" aria-hidden="true"><path class="mn-faint" pathLength="1" d="M40,36 L125,118"></path><path class="mn-faint" pathLength="1" d="M245,62 L125,118"></path><path class="mn-faint" pathLength="1" d="M245,62 L375,228"></path><path class="mn-faint" pathLength="1" d="M440,20 L375,228"></path><path class="mn-faint" pathLength="1" d="M440,20 L625,118"></path><path class="mn-faint" pathLength="1" d="M575,74 L375,228"></path><path class="mn-faint" pathLength="1" d="M575,74 L625,118"></path><path class="mn-faint" pathLength="1" d="M770,36 L625,118"></path><path class="mn-faint" pathLength="1" d="M770,36 L875,228"></path><path class="mn-faint" pathLength="1" d="M962,96 L875,228"></path><path class="mn-cross" pathLength="1" d="M125,118 Q375,60 625,118"></path><path class="mn-main" pathLength="1" d="M125,118 C250.0,118 250.0,228 375,228"></path><path class="mn-main" pathLength="1" d="M375,228 C500.0,228 500.0,118 625,118"></path><path class="mn-main" pathLength="1" d="M625,118 C750.0,118 750.0,228 875,228"></path><path class="mn-pulse p0" pathLength="100" d="M125,118 C250.0,118 250.0,228 375,228"></path><path class="mn-pulse p1" pathLength="100" d="M375,228 C500.0,228 500.0,118 625,118"></path><path class="mn-pulse p2" pathLength="100" d="M625,118 C750.0,118 750.0,228 875,228"></path><path class="mn-pulse p3" pathLength="100" d="M125,118 Q375,60 625,118"></path></svg><span class="mn-word w-dim a-l" style="left: 4.0%; top: 36px; transition-delay: 1300ms"><i></i><b>Fallos</b></span><span class="mn-word w-dim a-c" style="left: 24.5%; top: 62px; transition-delay: 1480ms"><i></i><b>Puntos débiles</b></span><span class="mn-word w-mid a-c" style="left: 44.0%; top: 20px; transition-delay: 1660ms"><i></i><b>Estrategia</b></span><span class="mn-word w-mid a-c" style="left: 57.5%; top: 74px; transition-delay: 1840ms"><i></i><b>Cosas a mejorar</b></span><span class="mn-word w-hi a-c" style="left: 77.0%; top: 36px; transition-delay: 2020ms"><i></i><b>Solución</b></span><span class="mn-word w-top a-r" style="left: 96.2%; top: 96px; transition-delay: 2200ms"><i></i><b>Éxito</b></span></div>
+      <div class="globe" aria-hidden="true"><svg viewBox="-230 -230 460 460" width="100%" height="100%"><defs><radialGradient id="glShade" cx="38%" cy="34%" r="70%"><stop offset="0" stop-color="#ffffff" stop-opacity="0"></stop><stop offset="1" stop-color="#E8743B" stop-opacity="0.10"></stop></radialGradient></defs><g transform="rotate(-18)"><circle class="gl-body" r="200"></circle><g class="gl-par"><ellipse cx="0" cy="-173.2" rx="100.0" ry="16.0"></ellipse><ellipse cx="0" cy="-100.0" rx="173.2" ry="27.7"></ellipse><ellipse cx="0" cy="0.0" rx="200.0" ry="32.0"></ellipse><ellipse cx="0" cy="100.0" rx="173.2" ry="27.7"></ellipse><ellipse cx="0" cy="173.2" rx="100.0" ry="16.0"></ellipse></g><g class="gl-mers"><ellipse class="gl-mer" cx="0" cy="0" rx="200" ry="200" style="animation-delay: 0s"></ellipse><ellipse class="gl-mer" cx="0" cy="0" rx="200" ry="200" style="animation-delay: -3s"></ellipse><ellipse class="gl-mer" cx="0" cy="0" rx="200" ry="200" style="animation-delay: -6s"></ellipse><ellipse class="gl-mer" cx="0" cy="0" rx="200" ry="200" style="animation-delay: -9s"></ellipse><ellipse class="gl-mer" cx="0" cy="0" rx="200" ry="200" style="animation-delay: -12s"></ellipse><ellipse class="gl-mer" cx="0" cy="0" rx="200" ry="200" style="animation-delay: -15s"></ellipse></g><circle class="gl-rim" r="200"></circle><ellipse class="gl-orbit" cx="0" cy="0" rx="226" ry="58"></ellipse></g></svg></div>
+            <svg class="mnet-m" aria-hidden="true"></svg><div class="mnet-wrap" aria-hidden="true"><svg class="mnet" viewBox="0 0 1000 310" preserveAspectRatio="none" aria-hidden="true"><path class="mn-faint" pathLength="1" d="M40,36 L125,118"></path><path class="mn-faint" pathLength="1" d="M245,62 L125,118"></path><path class="mn-faint" pathLength="1" d="M245,62 L375,228"></path><path class="mn-faint" pathLength="1" d="M440,20 L375,228"></path><path class="mn-faint" pathLength="1" d="M440,20 L625,118"></path><path class="mn-faint" pathLength="1" d="M575,74 L375,228"></path><path class="mn-faint" pathLength="1" d="M575,74 L625,118"></path><path class="mn-faint" pathLength="1" d="M770,36 L625,118"></path><path class="mn-faint" pathLength="1" d="M770,36 L875,228"></path><path class="mn-faint" pathLength="1" d="M962,96 L875,228"></path><path class="mn-cross" pathLength="1" d="M125,118 Q375,60 625,118"></path><path class="mn-main" pathLength="1" d="M125,118 C250.0,118 250.0,228 375,228"></path><path class="mn-main" pathLength="1" d="M375,228 C500.0,228 500.0,118 625,118"></path><path class="mn-main" pathLength="1" d="M625,118 C750.0,118 750.0,228 875,228"></path><path class="mn-pulse p0" pathLength="100" d="M125,118 C250.0,118 250.0,228 375,228"></path><path class="mn-pulse p1" pathLength="100" d="M375,228 C500.0,228 500.0,118 625,118"></path><path class="mn-pulse p2" pathLength="100" d="M625,118 C750.0,118 750.0,228 875,228"></path><path class="mn-pulse p3" pathLength="100" d="M125,118 Q375,60 625,118"></path></svg><span class="mn-word w-dim a-l" style="left: 4.0%; top: 36px; transition-delay: 1300ms"><i></i><b>Fallos</b></span><span class="mn-word w-dim a-c" style="left: 24.5%; top: 62px; transition-delay: 1480ms"><i></i><b>Puntos débiles</b></span><span class="mn-word w-mid a-c" style="left: 44.0%; top: 20px; transition-delay: 1660ms"><i></i><b>Estrategia</b></span><span class="mn-word w-mid a-c" style="left: 57.5%; top: 74px; transition-delay: 1840ms"><i></i><b>Áreas de mejora</b></span><span class="mn-word w-hi a-c" style="left: 77.0%; top: 36px; transition-delay: 2020ms"><i></i><b>Solución</b></span><span class="mn-word w-top a-r" style="left: 96.2%; top: 96px; transition-delay: 2200ms"><i></i><b>Éxito</b></span></div>
       <div class="mstep" data-i="0">
         <span class="mdot">01</span>
         <span class="label">Fase 01</span>
@@ -281,7 +315,7 @@
         <h3 class="disp">Diseñar</h3>
         <p>Un plan a medida, con objetivos, presupuesto y fechas por escrito.</p>
       </div>
-      <div class="mw" data-after="1" aria-hidden="true"><span style="--d: 2.7s" class="mn-word w-mid"><i></i><b>Estrategia</b></span><span style="--d: 3.6s" class="mn-word w-mid"><i></i><b>Cosas a mejorar</b></span></div>
+      <div class="mw" data-after="1" aria-hidden="true"><span style="--d: 2.7s" class="mn-word w-mid"><i></i><b>Estrategia</b></span><span style="--d: 3.6s" class="mn-word w-mid"><i></i><b>Áreas de mejora</b></span></div>
       <div class="mstep" data-i="2">
         <span class="mdot">03</span>
         <span class="label">Fase 03</span>
@@ -298,6 +332,17 @@
       <div class="mw" data-after="3" aria-hidden="true"><span style="--d: 5.4s" class="mn-word w-top"><i></i><b>Éxito</b></span></div>
     </div>
     </div>
+    <div class="cw-win">
+      <div class="cw-l">
+        <h3 class="cw-t">Para todo tipo de negocio</h3>
+        <div class="cw-tags" aria-label="Con quién trabajamos"><span class="cw-tag">Autónomos</span><span class="cw-tag">Negocios locales</span><span class="cw-tag">Pequeñas empresas</span><span class="cw-tag">Pymes</span><span class="cw-tag">Empresas</span></div>
+      </div>
+      <div class="cw-txt">
+        <p>En Marae blue Studio trabajamos con todo tipo de clientes. Da igual el tamaño o el sector: adaptamos cada proyecto a lo que tu negocio necesita.</p>
+        <p>Nos apoyamos en <em class="hl">tecnología avanzada</em> que nos permite analizar datos, ejecutar acciones y extraer la estrategia adecuada para cada cliente.</p>
+        <ul class="cw-steps" aria-label="Lo que hace nuestra tecnología"><li><span>01</span>Analizar</li><li><span>02</span>Ejecutar</li><li><span>03</span>Extraer estrategias</li></ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -308,8 +353,8 @@
     <div class="faq">
       <div class="faq-head">
         <span class="label kw rvt">04 — Preguntas frecuentes</span>
-        <h2 class="h-sec disp"><span class="line rvl"><span>Pregunta sin miedo.</span></span><span class="line rvl dl1"><span style="color: #F2A65A">Te respondemos al momento.</span></span></h2>
-        <p class="lead rv dl2">Hemos juntado las dudas que más nos llegan. Elige una y te contestamos como lo haríamos en persona: <em class="hl hl-dark">claro y sin rodeos</em>.</p>
+        <h2 class="h-sec lw-h" data-lw="1" style="--n: 7"><span class="lw" style="--i: 0">Pregunta</span> <span class="lw" style="--i: 1">sin</span> <span class="lw" style="--i: 2">miedo.</span> <br><span style="color: #F2A65A"><span class="lw" style="--i: 3">Te</span> <span class="lw" style="--i: 4">respondemos</span> <span class="lw" style="--i: 5">al</span> <span class="lw" style="--i: 6">momento.</span></span></h2>
+        <p class="lead rv dl2">Hemos reunido las dudas que más nos llegan. Elige una y te contestamos como lo haríamos en persona: <em class="hl hl-dark">claro y sin rodeos</em>.</p>
       </div>
       <div class="faq-chips rv dl2">
         <span class="label faq-chips-t">Toca una pregunta</span>
@@ -318,13 +363,13 @@
         </div>
         <div class="faq-prog">
           <div class="faq-bar" aria-hidden="true"><i data-faq-bar style="width: 0%"></i></div>
-          <span class="faq-prog-t"><span data-faq-count>0</span> de <span data-faq-total>7</span> respuestas descubiertas</span>
+          <span class="faq-prog-t"><span data-faq-count>0</span> de <span data-faq-total>8</span> respuestas descubiertas</span>
           <button class="faq-reset" type="button" data-faq-reset hidden>Empezar de nuevo</button>
         </div>
       </div>
       <div class="faq-chat rv dl1">
         <div class="faq-top">
-          <span class="faq-av"><img src="assets/img/sello.svg" alt="" style="display: block; width: 26px; height: auto"></span>
+          <span class="faq-av"><img decoding="async" src="assets/img/sello.svg" alt="" style="display: block; width: 26px; height: auto"></span>
           <span class="faq-who"><strong>Marae blue Studio</strong><span><i class="faq-live" aria-hidden="true"></i>En línea</span></span>
         </div>
         <div class="faq-thread" role="log" aria-live="polite" aria-label="Conversación de preguntas frecuentes">
@@ -340,57 +385,64 @@
 <!-- CONTACTO: mensaje en forma de frase + postal en directo -->
 <section class="sec ct-sec" id="contacto">
   <div class="wrap">
-    <div class="sechead">
-      <div style="display: flex; flex-direction: column; gap: 20px">
+    <div class="ct-intro">
+      <div class="ct-intro-l">
         <span class="label kw rvt">05 — Contacto</span>
-        <h2 class="h-sec disp"><span class="line rvl"><span>Cuéntanos tu idea.</span></span></h2>
+        <h2 class="h-sec lw-h" data-lw="1" style="--n: 3"><span class="lw" style="--i: 0">Cuéntanos</span> <span class="lw" style="--i: 1">tu</span> <span class="lw" style="--i: 2">idea.</span></h2>
+        <p class="lead">Sin compromiso. Te escuchamos y te decimos <em class="hl">con honestidad</em> cómo podemos ayudarte. Y si consideramos que no somos la mejor opción para tu proyecto, también te lo diremos con claridad, para que no pierdas tiempo.</p>
       </div>
-      <div class="rv dl2" style="display: flex; flex-direction: column; gap: 18px; max-width: 46ch">
-        <p class="lead" style="margin: 0">Sin compromiso. Te escuchamos y te decimos <em class="hl">con honestidad</em> cómo podemos ayudarte.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 8px 24px">
-          <a href="mailto:[email]" style="font-size: 18px; font-weight: 500">[hola@tudominio.com]</a>
-          <span style="font-size: 16px; color: #5c6170">[Ciudad · Dirección]</span>
+      <div class="ct-quote">
+        <span class="svx-node" aria-hidden="true"></span>
+        <h3 class="ct-quote-t">Presupuesto sin compromiso</h3>
+        <p>Ya estés pensando en crear la web de tu negocio o en dar un nuevo impulso a tu marketing digital, en Marae blue Studio estudiamos tu caso y te preparamos una propuesta <em class="hl hl-dark">a tu medida</em>.</p>
+        <div class="ct-data">
+          <a class="ct-data-mail" href="mailto:maraebluestudio@gmail.com">maraebluestudio@gmail.com</a>
+          <span class="ct-data-addr">Madrid, España</span>
+          <span class="ct-fast ct-fast-x"><svg class="ct-fast-ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2.5 2"></path><path d="M9 2h6"></path></svg><span class="ct-fast-txt"><strong>Respuesta rápida</strong><b>Menos de 24 h laborables</b></span></span>
         </div>
       </div>
     </div>
-    <div class="ct" data-ct>
-        <form class="ct-form rv" id="contact-form" novalidate>
-          <p class="ct-line">Hola, me llamo
-            <label class="sr-only" for="c-name">Tu nombre</label><input id="c-name" class="ct-in w-name" name="name" type="text" autocomplete="name" required="required" placeholder="tu nombre">
-            y tengo
-            <label class="sr-only" for="c-biz">Tu negocio</label><input id="c-biz" class="ct-in w-biz" name="company" autocomplete="organization" type="text" placeholder="una tienda, un estudio, una idea…">.
-          </p>
-          <div class="ct-block">
-            <p class="ct-line" style="margin: 0">Me gustaría que me ayudarais con…</p>
-            <div class="ct-chips" role="group" aria-label="Qué necesitas">
-              
+    <div class="ct pc" data-ct>
+        <form class="cf" id="contact-form" novalidate>
+          <div class="cf-head">
+            <h3 class="cf-t">Déjanos tus datos</h3>
+            <p>Solo te llevará un minuto. Los campos con * son obligatorios.</p>
+          </div>
+          <div class="cf-grid">
+            <div class="cf-field">
+              <label for="c-name">Nombre *</label>
+              <input id="c-name" name="name" type="text" autocomplete="name" required="required" placeholder="Tu nombre">
+            </div>
+            <div class="cf-field">
+              <label for="c-mail">Email *</label>
+              <input id="c-mail" name="email" type="email" autocomplete="email" required="required" placeholder="tu@email.com">
+            </div>
+            <div class="cf-field cf-full">
+              <label for="c-biz">Tu negocio</label>
+              <input id="c-biz" name="company" autocomplete="organization" type="text" placeholder="Una tienda, un estudio, una idea…">
+            </div>
+            <div class="cf-field cf-full">
+              <span class="cf-lbl" id="c-svc-l">¿En qué podemos ayudarte?</span>
+              <div class="ct-chips cf-chips" role="group" aria-labelledby="c-svc-l">
+                
+              </div>
+            </div>
+            <div class="cf-field cf-full">
+              <label for="c-msg">Tu mensaje</label>
+              <textarea id="c-msg" name="message" placeholder="Cuéntanos qué tienes en mente…"></textarea>
             </div>
           </div>
-          <div class="ct-block">
-            <label class="ct-line" for="c-msg" style="display: block">Mi idea, en pocas palabras:</label>
-            <textarea id="c-msg" class="ct-ta" name="message" placeholder="Cuéntanos qué tienes en mente…"></textarea>
-          </div>
-          <p class="ct-line">Podéis escribirme a
-            <label class="sr-only" for="c-mail">Tu email</label><input id="c-mail" class="ct-in w-mail" name="email" type="email" autocomplete="email" required="required" placeholder="tu@email.com">.
-          </p>
           <label class="ct-consent"><input type="checkbox" name="privacy" value="aceptada" required="required"><span>He leído y acepto la <a href="#contacto">[política de privacidad]</a>.</span></label>
           <div class="ct-hp" aria-hidden="true"><label for="c-web">No rellenes este campo</label><input id="c-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>
           <p class="ct-error" role="alert" data-ct-error hidden></p>
-          <div class="ct-foot">
-            <div class="ct-meter">
-              <div class="ct-bar" aria-hidden="true"><i data-ct-bar style="width: 0%"></i></div>
-              <span data-ct-meter>Empieza por tu nombre</span>
-            </div>
-            <button class="btn btn-studio ct-send" type="submit">Enviar mi idea
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"></path><path d="M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
-            </button>
-          </div>
+          <button class="btn btn-studio cf-send" type="submit">Enviar mensaje
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"></path><path d="M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
+          </button>
         </form>
         <div class="ct-side">
           <span class="label ct-side-t">Así nos llega tu mensaje</span>
           <div class="ct-card" aria-hidden="true">
-            <div class="ct-stamp"><img src="assets/img/sello.svg" alt="" style="display: block; width: 40px; height: auto"></div>
-            <svg class="ct-mark" width="96" height="96" viewBox="0 0 96 96" fill="none" stroke="#E8743B" stroke-width="1.5"><circle cx="48" cy="48" r="34" stroke-dasharray="3 4"></circle><path d="M8 40c8-6 16 6 24 0s16 6 24 0 16 6 24 0 8 2 8 2"></path><path d="M8 52c8-6 16 6 24 0s16 6 24 0 16 6 24 0 8 2 8 2"></path></svg>
+            <div class="pc-wax" aria-hidden="true"><span class="pc-drip d1"></span><span class="pc-drip d2"></span><span class="pc-drip d3"></span><div class="pc-wax-blob"></div><div class="pc-wax-gloss"></div><div class="pc-wax-ring"></div><img decoding="async" class="pc-wax-img" src="assets/img/sello.svg" alt=""></div>
             <div class="ct-rows">
               <div class="ct-row"><span>Para</span><b>Marae blue Studio</b></div>
               <div class="ct-row"><span>De</span><b class="ph" data-pv="name">Tu nombre</b></div>
@@ -404,7 +456,7 @@
           </div>
         </div>
       </div>
-      <div class="ct-done" role="status" data-ct-done hidden>
+    <div class="ct-done" role="status" data-ct-done hidden>
         <svg class="ct-check" width="88" height="88" viewBox="0 0 88 88" fill="none" aria-hidden="true"><circle cx="44" cy="44" r="40" stroke="#E8743B" stroke-width="3"></circle><path d="M27 45l12 12 23-25" stroke="#E8743B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         <h3 class="disp" data-ct-title tabindex="-1">Gracias.</h3>
         <p>Tu idea ya está en camino. Te escribimos muy pronto.</p>
@@ -422,20 +474,17 @@
   <div class="wrap ft-in">
     <div class="ft-cta">
       <div style="display: flex; flex-direction: column; gap: 18px">
-        <span class="label" style="color: #F2A65A">¿Navegamos juntos?</span>
-        <p class="ft-title disp">Tu idea merece <em>buen puerto.</em></p>
+        <p class="ft-title lw-ft" data-lw="1" style="--n: 5"><span class="lw" style="--i: 0">Tu</span> <span class="lw" style="--i: 1">próxima</span> <span class="lw" style="--i: 2">idea</span> <em><span class="lw" style="--i: 3">empieza</span> <span class="lw" style="--i: 4">aquí.</span></em></p>
       </div>
       <div class="ft-cta-r">
-        <a class="btn btn-studio ft-btn" href="#contacto">Cuéntanos tu idea
+        <a class="btn btn-studio ft-btn" href="#contacto">¿Empezamos?
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
         </a>
-        <a class="sf-mail" href="mailto:[email]">[hola@tudominio.com]</a>
       </div>
     </div>
     <div class="ft-cols">
       <div class="ft-brand">
-        <img src="assets/img/logo-marae-blue.svg" alt="Marae blue Studio" style="display: block; height: 30px; width: auto">
-        <p>Estrategia, creatividad y datos trabajando juntos para que tu marca se vea.</p>
+        <p class="ft-move" data-lw="1" style="--n: 12" aria-label="Estrategia, creatividad y datos trabajando juntos para que tu marca se vea."><span class="lw" style="--i: 0">Estrategia,</span> <span class="lw" style="--i: 1">creatividad</span> <span class="lw" style="--i: 2">y</span> <span class="lw" style="--i: 3">datos</span> <span class="lw" style="--i: 4">trabajando</span> <span class="lw" style="--i: 5">juntos</span> <span class="lw" style="--i: 6">para</span> <span class="lw" style="--i: 7">que</span> <span class="lw" style="--i: 8">tu</span> <span class="lw" style="--i: 9">marca</span> <span class="lw" style="--i: 10">se</span> <span class="lw" style="--i: 11">vea.</span></p>
       </div>
       <nav class="ft-col" aria-label="Pie">
         <span class="label">Navega</span>
@@ -456,23 +505,23 @@
       </div>
       <div class="ft-col">
         <span class="label">Síguenos</span>
-        <a class="ft-link" href="#inicio"><span>[Instagram]</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a>
-        <a class="ft-link" href="#inicio"><span>[LinkedIn]</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a>
-        <span class="ft-addr">[Ciudad · Dirección]</span>
+        <a class="ft-link" href="https://www.instagram.com/maraebluemarketing/" target="_blank" rel="noopener" aria-label="Instagram de Marae blue Studio (se abre en una pestaña nueva)"><span>Instagram</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a>
+        <span class="ft-addr">Madrid, España</span>
       </div>
     </div>
   </div>
   <div class="ft-word" aria-hidden="true"><span class="ft-l" style="--i: 0">M</span><span class="ft-l" style="--i: 1">A</span><span class="ft-l" style="--i: 2">R</span><span class="ft-l" style="--i: 3">A</span><span class="ft-l" style="--i: 4">E</span><span class="ft-sp"></span><span class="ft-l" style="--i: 6">B</span><span class="ft-l" style="--i: 7">L</span><span class="ft-l" style="--i: 8">U</span><span class="ft-l" style="--i: 9">E</span></div>
   <div class="wrap ft-legal">
-    <span>© 2026 Marae blue Studio</span>
     <span>[Aviso legal · Privacidad · Cookies]</span>
     <a class="sf-up" href="#inicio">Volver arriba
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"></path><path d="M6 11l6-6 6 6"></path></svg>
     </a>
-    <img class="sello ft-sello" src="assets/img/sello.svg" alt="Sello de marca Marae blue Studio" style="display: block; width: 56px; height: auto">
+    <img decoding="async" class="sello ft-sello" src="assets/img/sello.svg" alt="Sello de marca Marae blue Studio" style="display: block; width: 56px; height: auto">
   </div>
   </div>
 </footer>
+
+
 </div>
 </body>
 </html>
