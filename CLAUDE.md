@@ -1,6 +1,6 @@
 # Marae Blue Studio — web
 
-Web de Marae Blue Studio (antes Marea Studio), agencia de marketing digital. Sitio estático (HTML + CSS + JS, sin build), publicado con GitHub Pages desde la rama `main` (raíz del repo). Cada push a `main` se publica solo en 1–2 minutos.
+Web de Marae Blue Studio (antes Marea Studio), agencia de marketing digital. Sitio estático (HTML + CSS + JS, sin build), publicado con GitHub Pages desde la rama `main` (raíz del repo) en el dominio propio **https://maraebluestudio.com** (archivo `CNAME`; DNS en GoDaddy: 4 registros A de `@` a 185.199.108–111.153 y `www` como CNAME a `sendo407.github.io`; los registros MX/TXT/autodiscover son del correo de Microsoft 365 y no se tocan). Cada push a `main` se publica solo en 1–2 minutos.
 
 ## Estructura
 
@@ -10,6 +10,8 @@ assets/css/styles.css   Estilos del diseño v2 + añadidos al final (privacidad 
 assets/js/main.js       Modo claro/oscuro (se guarda en localStorage `marae-mode`), música generada con Web Audio (solo al pulsar), menú (desplegable de servicios y menú móvil), frases que se encienden palabra a palabra (`data-lw`), carrusel, FAQ en chat, formulario → n8n con postal en directo, animaciones de scroll, parallax del hero y del pie, gráfica de "Resultados", red de "Cómo trabajamos" en móvil, cursor propio, desplazamiento suave
 assets/img/             Fotos del diseño (hero-mar, svc-*, mesa-equipo…), logotipo (logo-marae-blue.svg), sello (sello.svg) y olas/islas en SVG
 favicon.*, apple-touch-icon.png, site.webmanifest   Iconos
+CNAME, robots.txt, sitemap.xml   Dominio propio y SEO (actualizar `lastmod` del sitemap al publicar cambios grandes)
+assets/img/og-image.jpg  Imagen de 1200×630 para compartir en redes
 design-tokens.json      Sistema de diseño "Marae Blue Studio" (colores, tipografía, espaciado, radios)
 ```
 Para verla en local: `python3 -m http.server 8000` y abrir http://localhost:8000.
@@ -75,6 +77,6 @@ Inspirado en la estructura de agenciaicaro.com, con la paleta propia:
 - Contenido real en los [corchetes]: proyectos e imágenes, textos legales (aviso legal, privacidad, cookies).
 - Archivos .woff2 de Agrandir Wide (licencia web de Pangram Pangram) → `@font-face` en `styles.css`.
 - Foto del hero a mayor resolución (la actual mide 740 px de ancho) y comprobar su licencia.
-- Dominio propio (Settings → Pages → Custom domain).
+- SEO: en `<head>` van título, descripción, canonical, Open Graph y una ficha JSON-LD `ProfessionalService` (email, Madrid, Instagram). Si cambian los datos de contacto, actualizarlos también ahí.
 - Páginas legales (aviso legal, privacidad, cookies). El formulario enlaza a una [política de privacidad] que aún no existe.
 - FAQ: respuesta sobre permanencia.
